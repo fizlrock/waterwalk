@@ -1,0 +1,79 @@
+syntax = "proto3";
+package dev.fizlrock.waterwalk.grpc;
+
+
+import "google/protobuf/timestamp.proto";
+
+
+option java_multiple_files = true;
+option java_package = "dev.fizlrock.waterwalk.grpc.api";
+// option java_outer_classname = "HelloWorldProto";
+
+
+// Определяем gRPC-сервис
+service WaterwalkService {
+
+  // Location CRUD
+  rpc getLocationList(SkipLimit) returns (stream Location);
+  rpc createLocation(Location) returns (Void);
+  rpc deleteLocation(DeleteLocationRq) returns (Void);
+  rpc updateLocation(UpdateLocationRq) returns (Void);
+
+}
+
+
+message UpdateLocationRq {
+  string old_name = 1;
+  Location location = 2;
+}
+
+message DeleteLocationRq {
+  string location_name = 1;
+}
+
+
+
+message LocationTree {
+  Location location = 1;
+  repeated Route routes = 2;
+}
+
+message Void {}
+
+message LongId {
+  int64 id = 1;
+}
+
+message SkipLimit {
+  int64 skip = 1;
+  int64 limit = 2;
+}
+
+
+message Location {
+  string name = 2;
+  string description = 3;
+}
+
+message Route {
+  optional int64 id = 1;
+  string name = 2;
+  string description = 3;
+  int64 location_id = 4;
+  Difficulty diffuculty = 5;
+  int64 price = 6; // Цена прогулки в рублях
+  int64 duration = 7; // Продолжительность прогулки в минутах
+}
+
+message PlannedRoute {
+  optional int64 id = 1;
+  int64 location_id = 2;
+  google.protobuf.Timestamp timedate = 3;
+  repeated int64 instructor_ids = 4;
+}
+
+enum Difficulty {
+  EASY = 0;
+  NORMAL = 1;
+  ADVANCED = 2;
+}

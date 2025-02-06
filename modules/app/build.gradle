@@ -1,0 +1,23 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+
+
+  implementation project(":domain")   
+  implementation project(":DAO")   
+  implementation project(":grpc-impl")   
+
+  implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+  implementation "org.springframework.modulith:spring-modulith-starter-core:${springModulithVersion}"
+  implementation "org.springframework.modulith:spring-modulith-core:${springModulithVersion}"
+  implementation "org.springframework.modulith:spring-modulith-docs:${springModulithVersion}"
+  
+}
+
+
+
+
+
+

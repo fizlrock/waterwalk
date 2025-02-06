@@ -1,0 +1,18 @@
+
+plugins {
+  id("io.freefair.lombok") version "8.12.1"
+}
+
+
+
+dependencies {
+  // implementation 'org.springframework.boot:spring-boot-starter'
+
+  implementation("org.springframework.modulith:spring-modulith-starter-core:${springModulithVersion}")
+  implementation("org.springframework.modulith:spring-modulith-core:${springModulithVersion}")
+
+  implementation project(':domain')
+  
+}
+
+

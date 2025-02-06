@@ -1,0 +1,6 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation("net.devh:grpc-server-spring-boot-starter:${springBootGrpcVersion}")
+    implementation project(':grpc-api')
+    implementation project(':domain')
+}
