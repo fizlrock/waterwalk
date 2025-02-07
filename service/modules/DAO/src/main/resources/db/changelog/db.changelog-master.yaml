@@ -1,0 +1,104 @@
+# yaml-language-server: $schema=https://json.schemastore.org/liquibase-3.2.json
+databaseChangeLog:
+  - changeSet:
+      id: '1'
+      author: 'fizlrock'
+      comment: Create place table
+      changes:
+        - createTable:
+            tableName: place
+            columns:
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: description
+                  type: varchar(300)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: '2'
+      author: 'fizlrock'
+      comment: Add artificial primary key to place table
+      changes:
+        - addColumn:
+            tableName: place
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+
+  - changeSet:
+      id: '3'
+      author: 'fizlrock'
+      comment: Create route table
+      changes:
+        - createTable:
+            tableName: route
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: place_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  remarks: Название маршрута
+                  constraints:
+                    nullable: false
+              - column:
+                  name: comment
+                  type: varchar(100)
+                  remarks: Краткое описание маршрута
+                  constraints:
+                    nullable: false
+              - column:
+                  name: distance
+                  type: bigint
+                  remarks: Дистанция в метрах
+                  constraints:
+                    nullable: false
+                    checkConstraint: "distance >= 0"
+              - column:
+                  name: difficulty
+                  remarks: Сложность маршрута
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: duration
+                  remarks: Продолжительность маршрута в минутах
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    checkConstraint: "duration >= 0"
+              - column:
+                  name: price
+                  remarks: Цена маршрута в рублях
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    checkConstraint: "price >= 0"
+
+        - addForeignKeyConstraint:
+            constraintName: route_place_fk
+            baseTableName: route
+            baseColumnNames: place_id
+            referencedTableName: place 
+            referencedColumnNames: id 
+
+
+              
