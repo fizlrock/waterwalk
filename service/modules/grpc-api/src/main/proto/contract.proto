@@ -7,7 +7,6 @@ import "google/protobuf/timestamp.proto";
 
 option java_multiple_files = true;
 option java_package = "dev.fizlrock.waterwalk.grpc.api";
-// option java_outer_classname = "HelloWorldProto";
 
 
 // Определяем gRPC-сервис
