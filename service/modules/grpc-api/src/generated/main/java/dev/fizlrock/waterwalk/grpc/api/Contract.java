@@ -25,20 +25,10 @@ public final class Contract {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_dev_fizlrock_waterwalk_grpc_DeleteLocationRq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_dev_fizlrock_waterwalk_grpc_LocationTree_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_dev_fizlrock_waterwalk_grpc_LocationTree_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_dev_fizlrock_waterwalk_grpc_Void_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_dev_fizlrock_waterwalk_grpc_Void_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_dev_fizlrock_waterwalk_grpc_LongId_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_dev_fizlrock_waterwalk_grpc_LongId_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_dev_fizlrock_waterwalk_grpc_SkipLimit_descriptor;
   static final 
@@ -49,16 +39,6 @@ public final class Contract {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_dev_fizlrock_waterwalk_grpc_Location_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_dev_fizlrock_waterwalk_grpc_Route_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_dev_fizlrock_waterwalk_grpc_Route_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_dev_fizlrock_waterwalk_grpc_PlannedRoute_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_dev_fizlrock_waterwalk_grpc_PlannedRoute_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -73,34 +53,21 @@ public final class Contract {
       "\n\020UpdateLocationRq\022\020\n\010old_name\030\001 \001(\t\0227\n\010" +
       "location\030\002 \001(\0132%.dev.fizlrock.waterwalk." +
       "grpc.Location\")\n\020DeleteLocationRq\022\025\n\rloc" +
-      "ation_name\030\001 \001(\t\"{\n\014LocationTree\0227\n\010loca" +
-      "tion\030\001 \001(\0132%.dev.fizlrock.waterwalk.grpc" +
-      ".Location\0222\n\006routes\030\002 \003(\0132\".dev.fizlrock" +
-      ".waterwalk.grpc.Route\"\006\n\004Void\"\024\n\006LongId\022" +
-      "\n\n\002id\030\001 \001(\003\"(\n\tSkipLimit\022\014\n\004skip\030\001 \001(\003\022\r" +
-      "\n\005limit\030\002 \001(\003\"-\n\010Location\022\014\n\004name\030\002 \001(\t\022" +
-      "\023\n\013description\030\003 \001(\t\"\265\001\n\005Route\022\017\n\002id\030\001 \001" +
-      "(\003H\000\210\001\001\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001" +
-      "(\t\022\023\n\013location_id\030\004 \001(\003\022;\n\ndiffuculty\030\005 " +
-      "\001(\0162\'.dev.fizlrock.waterwalk.grpc.Diffic" +
-      "ulty\022\r\n\005price\030\006 \001(\003\022\020\n\010duration\030\007 \001(\003B\005\n" +
-      "\003_id\"\201\001\n\014PlannedRoute\022\017\n\002id\030\001 \001(\003H\000\210\001\001\022\023" +
-      "\n\013location_id\030\002 \001(\003\022,\n\010timedate\030\003 \001(\0132\032." +
-      "google.protobuf.Timestamp\022\026\n\016instructor_" +
-      "ids\030\004 \003(\003B\005\n\003_id*0\n\nDifficulty\022\010\n\004EASY\020\000" +
-      "\022\n\n\006NORMAL\020\001\022\014\n\010ADVANCED\020\0022\232\003\n\020Waterwalk" +
-      "Service\022b\n\017getLocationList\022&.dev.fizlroc" +
-      "k.waterwalk.grpc.SkipLimit\032%.dev.fizlroc" +
-      "k.waterwalk.grpc.Location0\001\022Z\n\016createLoc" +
-      "ation\022%.dev.fizlrock.waterwalk.grpc.Loca" +
-      "tion\032!.dev.fizlrock.waterwalk.grpc.Void\022" +
-      "b\n\016deleteLocation\022-.dev.fizlrock.waterwa" +
-      "lk.grpc.DeleteLocationRq\032!.dev.fizlrock." +
-      "waterwalk.grpc.Void\022b\n\016updateLocation\022-." +
-      "dev.fizlrock.waterwalk.grpc.UpdateLocati" +
-      "onRq\032!.dev.fizlrock.waterwalk.grpc.VoidB" +
-      "#\n\037dev.fizlrock.waterwalk.grpc.apiP\001b\006pr" +
-      "oto3"
+      "ation_name\030\001 \001(\t\"\006\n\004Void\"(\n\tSkipLimit\022\014\n" +
+      "\004skip\030\001 \001(\003\022\r\n\005limit\030\002 \001(\003\"-\n\010Location\022\014" +
+      "\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t2\232\003\n\020Wa" +
+      "terwalkService\022b\n\017getLocationList\022&.dev." +
+      "fizlrock.waterwalk.grpc.SkipLimit\032%.dev." +
+      "fizlrock.waterwalk.grpc.Location0\001\022Z\n\016cr" +
+      "eateLocation\022%.dev.fizlrock.waterwalk.gr" +
+      "pc.Location\032!.dev.fizlrock.waterwalk.grp" +
+      "c.Void\022b\n\016deleteLocation\022-.dev.fizlrock." +
+      "waterwalk.grpc.DeleteLocationRq\032!.dev.fi" +
+      "zlrock.waterwalk.grpc.Void\022b\n\016updateLoca" +
+      "tion\022-.dev.fizlrock.waterwalk.grpc.Updat" +
+      "eLocationRq\032!.dev.fizlrock.waterwalk.grp" +
+      "c.VoidB#\n\037dev.fizlrock.waterwalk.grpc.ap" +
+      "iP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -119,48 +86,24 @@ public final class Contract {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_dev_fizlrock_waterwalk_grpc_DeleteLocationRq_descriptor,
         new java.lang.String[] { "LocationName", });
-    internal_static_dev_fizlrock_waterwalk_grpc_LocationTree_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_dev_fizlrock_waterwalk_grpc_LocationTree_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_dev_fizlrock_waterwalk_grpc_LocationTree_descriptor,
-        new java.lang.String[] { "Location", "Routes", });
     internal_static_dev_fizlrock_waterwalk_grpc_Void_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_dev_fizlrock_waterwalk_grpc_Void_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_dev_fizlrock_waterwalk_grpc_Void_descriptor,
         new java.lang.String[] { });
-    internal_static_dev_fizlrock_waterwalk_grpc_LongId_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_dev_fizlrock_waterwalk_grpc_LongId_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_dev_fizlrock_waterwalk_grpc_LongId_descriptor,
-        new java.lang.String[] { "Id", });
     internal_static_dev_fizlrock_waterwalk_grpc_SkipLimit_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_dev_fizlrock_waterwalk_grpc_SkipLimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_dev_fizlrock_waterwalk_grpc_SkipLimit_descriptor,
         new java.lang.String[] { "Skip", "Limit", });
     internal_static_dev_fizlrock_waterwalk_grpc_Location_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_dev_fizlrock_waterwalk_grpc_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_dev_fizlrock_waterwalk_grpc_Location_descriptor,
         new java.lang.String[] { "Name", "Description", });
-    internal_static_dev_fizlrock_waterwalk_grpc_Route_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_dev_fizlrock_waterwalk_grpc_Route_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_dev_fizlrock_waterwalk_grpc_Route_descriptor,
-        new java.lang.String[] { "Id", "Name", "Description", "LocationId", "Diffuculty", "Price", "Duration", "Id", });
-    internal_static_dev_fizlrock_waterwalk_grpc_PlannedRoute_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_dev_fizlrock_waterwalk_grpc_PlannedRoute_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_dev_fizlrock_waterwalk_grpc_PlannedRoute_descriptor,
-        new java.lang.String[] { "Id", "LocationId", "Timedate", "InstructorIds", "Id", });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
