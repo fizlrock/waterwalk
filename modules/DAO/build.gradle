@@ -10,8 +10,14 @@ dependencies {
 
   implementation("org.springframework.modulith:spring-modulith-starter-core:${springModulithVersion}")
   implementation("org.springframework.modulith:spring-modulith-core:${springModulithVersion}")
+  implementation "org.springframework.boot:spring-boot-starter-data-jdbc:${springBootVersion}"
+  
 
   implementation project(':domain')
+
+  implementation("org.postgresql:postgresql:42.7.5")
+  implementation 'org.liquibase:liquibase-core:4.24.0'
+  implementation 'org.yaml:snakeyaml:1.33'
   
 }
 

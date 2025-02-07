@@ -1,0 +1,15 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/waterwalk
+    username: admin
+    password: gracesecret
+    driver-class-name: org.postgresql.Driver
+
+  liquibase:
+    # enable: true
+    url: jdbc:postgresql://localhost:5432/waterwalk
+    user: admin
+    password: gracesecret
+    change-log: "classpath:/db/changelog/db.changelog-master.yaml"
+
