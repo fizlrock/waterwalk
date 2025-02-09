@@ -1,7 +1,7 @@
 package dev.fizlrock.waterwalk.dao.repository;
 
-import dev.fizlrock.waterwalk.dao.entity.PlaceEntity;
-import dev.fizlrock.waterwalk.dao.jdbc.PlaceJdbcRepository;
+import dev.fizlrock.waterwalk.dao.jdbc.PlaceEntityRepository;
+import dev.fizlrock.waterwalk.dao.mapper.PlaceMapper;
 import dev.fizlrock.waterwalk.domain.entity.Place;
 import dev.fizlrock.waterwalk.domain.repository.PlaceRepository;
 import java.util.List;
@@ -12,34 +12,28 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class PlaceRepositoryImpl implements PlaceRepository {
 
-  @Autowired PlaceJdbcRepository placeRepJdbc;
+  @Autowired PlaceEntityRepository placeRepJdbc;
+  @Autowired PlaceMapper mapper;
 
   @Override
   public boolean containsPlaceWithName(String name) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'containsPlaceWithName'");
+    return placeRepJdbc.findByName(name).isPresent();
   }
 
   @Override
   public void insert(Place p) {
 
-    var entity = PlaceEntity.builder().description(p.getComment()).name(p.getName()).build();
-
-    placeRepJdbc.save(entity);
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'insert'");
+    placeRepJdbc.save(mapper.toEntity(p));
   }
 
   @Override
   public Optional<Place> findByName(String name) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'findByName'");
+    return placeRepJdbc.findByName(name).map(mapper::toDomain);
   }
 
   @Override
   public void removeByName(String name) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'removeByName'");
+    placeRepJdbc.deleteByName(name);
   }
 
   @Override
@@ -50,13 +44,16 @@ public class PlaceRepositoryImpl implements PlaceRepository {
 
   @Override
   public void updateByName(String place_name, Place p) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'updateByName'");
+    var id = placeRepJdbc.findByName(place_name).orElseThrow().getId();
+
+    var updated = mapper.toEntity(p);
+    updated.setId(id);
+    placeRepJdbc.save(updated);
   }
 
   @Override
   public List<Place> findAll(int skip, int limit) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    // TODO pagination
+    return placeRepJdbc.findAll().stream().skip(skip).limit(limit).map(mapper::toDomain).toList();
   }
 }

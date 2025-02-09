@@ -1,10 +1,14 @@
 package dev.fizlrock.waterwalk.dao.entity;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 /** PlaceEntity */
-
 //     Name     |          Type          | Nullable | Default
 // -------------+------------------------+----------+---------
 //  name        | character varying(100) | "NO"     |
@@ -12,9 +16,14 @@ import lombok.Data;
 //  id          | bigint                 | "NO"     |
 
 @Data
-@Builder
+@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
+@Table("place")
 public class PlaceEntity {
-  private Long id;
-  private String name;
-  private String description;
+
+  @Id private Long id;
+
+  @NonNull private String name;
+  @NonNull private String description;
 }

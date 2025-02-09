@@ -1,13 +1,20 @@
 package dev.fizlrock.waterwalk.dao.repository;
 
+import dev.fizlrock.waterwalk.dao.jdbc.RouteEntityRepository;
+import dev.fizlrock.waterwalk.dao.mapper.RouteMapper;
 import dev.fizlrock.waterwalk.domain.entity.Route;
 import dev.fizlrock.waterwalk.domain.repository.RouteRepository;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 /** RouteRepositoryImpl */
 @Repository
+@RequiredArgsConstructor
 public class RouteRepositoryImpl implements RouteRepository {
+
+  private final RouteMapper mapper;
+  private final RouteEntityRepository entityRepository;
 
   @Override
   public List<Route> getRoutesWherePlace(String placeName) {

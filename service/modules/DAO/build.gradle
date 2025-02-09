@@ -1,23 +1,31 @@
 
 plugins {
   id("io.freefair.lombok") version "8.12.1"
+  id "com.diffplug.eclipse.apt" version "3.26.0" // Only for Eclipse
 }
 
 
 
 dependencies {
-  // implementation 'org.springframework.boot:spring-boot-starter'
+  implementation project(':domain')
 
+  
   implementation("org.springframework.modulith:spring-modulith-starter-core:${springModulithVersion}")
   implementation("org.springframework.modulith:spring-modulith-core:${springModulithVersion}")
-  implementation "org.springframework.boot:spring-boot-starter-data-jdbc:${springBootVersion}"
-  
 
-  implementation project(':domain')
+  implementation "org.springframework.boot:spring-boot-starter-data-jdbc:${springBootVersion}"
 
   implementation("org.postgresql:postgresql:42.7.5")
   implementation 'org.liquibase:liquibase-core:4.24.0'
   implementation 'org.yaml:snakeyaml:1.33'
+
+
+  implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+  annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+  // // If you are using mapstruct in test code
+  // testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
   
 }
 

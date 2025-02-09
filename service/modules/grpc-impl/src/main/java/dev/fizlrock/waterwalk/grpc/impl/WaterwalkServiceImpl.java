@@ -8,6 +8,7 @@ import dev.fizlrock.waterwalk.grpc.api.SkipLimit;
 import dev.fizlrock.waterwalk.grpc.api.UpdateLocationRq;
 import dev.fizlrock.waterwalk.grpc.api.Void;
 import dev.fizlrock.waterwalk.grpc.api.WaterwalkServiceGrpc.WaterwalkServiceImplBase;
+import dev.fizlrock.waterwalk.grpc.mapper.PlaceMapper;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +18,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class WaterwalkServiceImpl extends WaterwalkServiceImplBase {
 
   @Autowired PlaceService placeService;
+  @Autowired PlaceMapper placeMapper;
 
   @Override
   public void getLocationList(SkipLimit request, StreamObserver<Location> responseObserver) {
     var places = placeService.getAllPlaces((int) request.getSkip(), (int) request.getLimit());
-    places.stream()
-        .map(p -> Location.newBuilder().setName(p.getName()).setDescription(p.getComment()).build())
-        .forEach(responseObserver::onNext);
+    places.stream().map(placeMapper::toDto).forEach(responseObserver::onNext);
     responseObserver.onCompleted();
   }
 
@@ -52,7 +52,7 @@ public class WaterwalkServiceImpl extends WaterwalkServiceImplBase {
       UpdateLocationRq request, io.grpc.stub.StreamObserver<Void> responseObserver) {
 
     var location = request.getLocation();
-    var place = new Place(location.getName(), location.getDescription());
+    var place = placeMapper.toDomain(location);
 
     placeService.updateExisting(request.getOldName(), place);
 
