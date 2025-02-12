@@ -7,6 +7,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class UpdateLocationRq {
-  private final String old_name;
+  private final String oldName;
   private final LocationDto location;
 }

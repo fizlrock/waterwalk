@@ -4,12 +4,13 @@ import dev.fizlrock.waterwalk.application.port.dto.CreateLocationRq;
 import dev.fizlrock.waterwalk.application.port.dto.DeleteLocationRq;
 import dev.fizlrock.waterwalk.application.port.dto.GetLocationListRq;
 import dev.fizlrock.waterwalk.application.port.dto.LocationDto;
+import dev.fizlrock.waterwalk.application.port.dto.LocationListRsp;
 import dev.fizlrock.waterwalk.application.port.dto.UpdateLocationRq;
 
 /** ILocationService */
 public interface IWaterwalkService {
 
-  LocationDto getLocationList(GetLocationListRq rq);
+  LocationListRsp getLocationList(GetLocationListRq rq);
 
   LocationDto updateLocaton(UpdateLocationRq rq);
 

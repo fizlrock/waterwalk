@@ -6,8 +6,10 @@ import dev.fizlrock.waterwalk.application.port.dto.CreateLocationRq;
 import dev.fizlrock.waterwalk.application.port.dto.DeleteLocationRq;
 import dev.fizlrock.waterwalk.application.port.dto.GetLocationListRq;
 import dev.fizlrock.waterwalk.application.port.dto.LocationDto;
+import dev.fizlrock.waterwalk.application.port.dto.LocationListRsp;
 import dev.fizlrock.waterwalk.application.port.dto.UpdateLocationRq;
 import dev.fizlrock.waterwalk.domain.entity.Location;
+import dev.fizlrock.waterwalk.domain.exception.LocationNameNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,21 +19,39 @@ public class WaterwalkService implements IWaterwalkService {
   @Autowired ILocationRepository locationRepository;
 
   @Override
-  public LocationDto getLocationList(GetLocationListRq rq) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getLocationList'");
+  public LocationListRsp getLocationList(GetLocationListRq rq) {
+    var locations = locationRepository.findAll((int) rq.getSkip(), (int) rq.getLimit());
+
+    var dtos =
+        locations.stream().map(l -> new LocationDto(l.getLocationName(), l.getComment())).toList();
+
+    return new LocationListRsp(dtos);
   }
 
   @Override
   public LocationDto updateLocaton(UpdateLocationRq rq) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'updateLocaton'");
+
+    var location =
+        locationRepository
+            .findByName(rq.getOldName())
+            .orElseThrow(() -> new LocationNameNotFoundException(rq.getOldName()));
+
+    location.setLocationName(rq.getLocation().getLocationName());
+    location.setComment(rq.getLocation().getComment());
+
+    locationRepository.updateByName(rq.getOldName(), location);
+    return new LocationDto(location.getLocationName(), location.getLocationName());
   }
 
   @Override
   public LocationDto deleteLocaton(DeleteLocationRq rq) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'deleteLocaton'");
+
+    var location =
+        locationRepository
+            .findByName(rq.getLocationName())
+            .orElseThrow(() -> new LocationNameNotFoundException(rq.getLocationName()));
+
+    return new LocationDto(location.getLocationName(), location.getLocationName());
   }
 
   @Override
