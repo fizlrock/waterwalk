@@ -20,7 +20,8 @@ public class LocationRepository implements ILocationRepository {
     private final LocationMapper locationMapper;
 
     @Autowired
-    public LocationRepository(LocationEntityRepository locationEntityRepository, LocationMapper locationMapper) {
+    public LocationRepository(LocationEntityRepository locationEntityRepository,
+                              LocationMapper locationMapper) {
         this.locationEntityRepository = locationEntityRepository;
         this.locationMapper = locationMapper;
     }
@@ -59,9 +60,9 @@ public class LocationRepository implements ILocationRepository {
 
     @Override
     public List<Location> findAll(int skip, int limit) {
-        return locationEntityRepository.findAll(PageRequest.of(skip / limit, limit))
+        return locationEntityRepository.findAll()  // Получаем все сущности без пагинации
                 .stream()
-                .map(locationMapper::toDomain)
+                .map(locationMapper::toDomain)  // Преобразуем каждую сущность в доменный объект
                 .collect(Collectors.toList());
     }
 

@@ -1,6 +1,8 @@
 package dev.fizlrock.waterwalk.dao.jdbc;
 
 import dev.fizlrock.waterwalk.dao.entity.LocationEntity;
+
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.PageRequest;
@@ -15,5 +17,7 @@ public interface LocationEntityRepository extends ListCrudRepository<LocationEnt
 
   public void deleteByName(String name);
 
-  Optional<LocationEntity> findAll(PageRequest of);
+  List<LocationEntity> findAll();
+
+  // TODO findAll с пагинацией
 }

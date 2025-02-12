@@ -48,7 +48,7 @@ public class Location {
   // }
 
   public void setLocationName(String name) {
-    if (name.isBlank()) throw new IllegalArgumentException("Имя локации не может быть пустым");
+    if (name.isBlank()) throw new IllegalArgumentException("мя локации не может быть пустым");
     this.locationName = name.strip();
   }
 
