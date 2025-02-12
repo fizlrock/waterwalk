@@ -1,11 +1,11 @@
-package dev.fizlrock.waterwalk.domain.port.input;
+package dev.fizlrock.waterwalk.application.port;
 
 import dev.fizlrock.waterwalk.domain.entity.Location;
 import java.util.List;
 import java.util.Optional;
 
 /** PlaceRepository */
-public interface LocationRepository {
+public interface ILocationRepository {
 
   public boolean containsLocationWithName(String name);
 
