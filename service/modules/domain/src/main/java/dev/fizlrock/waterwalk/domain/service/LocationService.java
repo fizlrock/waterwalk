@@ -1,23 +1,24 @@
-package dev.fizlrock.waterwalk.domain.port.output;
+package dev.fizlrock.waterwalk.domain.service;
 
+import dev.fizlrock.waterwalk.dao.repository.LocationRepository;
 import dev.fizlrock.waterwalk.domain.entity.Location;
 import dev.fizlrock.waterwalk.domain.exception.LocationNameDublicateException;
-import dev.fizlrock.waterwalk.domain.exception.PlaceHasRoutesException;
-import dev.fizlrock.waterwalk.domain.exception.PlaceNameNotFoundException;
-import dev.fizlrock.waterwalk.domain.port.input.LocationRepository;
+import dev.fizlrock.waterwalk.domain.exception.LocationHasRoutesException;
+import dev.fizlrock.waterwalk.domain.exception.LocationNameNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PlaceService {
+public class LocationService {
 
-  @Autowired LocationRepository placeRep;
+  @Autowired
+  LocationRepository placeRep;
 
   public void deleteByName(String name) {
-    if (!placeRep.containsLocationWithName(name)) throw new PlaceNameNotFoundException(name);
+    if (!placeRep.containsLocationWithName(name)) throw new LocationNameNotFoundException(name);
 
-    if (placeRep.hasRoutesWithName(name)) throw new PlaceHasRoutesException(name);
+    if (placeRep.hasRoutesWithName(name)) throw new LocationHasRoutesException(name);
 
     placeRep.removeByName(name);
   }
@@ -28,7 +29,7 @@ public class PlaceService {
 
   public Location findByName(String name) {
     var place = placeRep.findByName(name);
-    return place.orElseThrow(() -> new PlaceNameNotFoundException(name));
+    return place.orElseThrow(() -> new LocationNameNotFoundException(name));
   }
 
   public void saveNew(Location p) {
@@ -41,7 +42,7 @@ public class PlaceService {
     String new_place_name = p.getLocationName();
 
     if (!placeRep.containsLocationWithName(place_name))
-      throw new PlaceNameNotFoundException(place_name);
+      throw new LocationNameNotFoundException(place_name);
 
     if (placeRep.containsLocationWithName(new_place_name))
       throw new LocationNameDublicateException(new_place_name);

@@ -20,7 +20,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table("place")
-public class PlaceEntity {
+public class LocationEntity {
 
   @Id private Long id;
 

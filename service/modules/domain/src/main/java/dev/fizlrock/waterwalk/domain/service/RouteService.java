@@ -1,7 +1,7 @@
 package dev.fizlrock.waterwalk.domain.port.output;
 
 import dev.fizlrock.waterwalk.domain.entity.Route;
-import dev.fizlrock.waterwalk.domain.exception.PlaceNameNotFoundException;
+import dev.fizlrock.waterwalk.domain.exception.LocationNameNotFoundException;
 import dev.fizlrock.waterwalk.domain.exception.RouteNameNotFoundException;
 import dev.fizlrock.waterwalk.domain.port.input.LocationRepository;
 import dev.fizlrock.waterwalk.domain.port.input.RouteRepository;
@@ -21,7 +21,7 @@ public class RouteService {
     var place =
         placeRepository
             .findByName(placeName)
-            .orElseThrow(() -> new PlaceNameNotFoundException(placeName));
+            .orElseThrow(() -> new LocationNameNotFoundException(placeName));
 
     place.addRoute(route);
 

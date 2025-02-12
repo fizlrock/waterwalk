@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 
 /** PlaceHasRoutesException */
 @RequiredArgsConstructor
-public class PlaceHasRoutesException extends DomainException {
+public class LocationHasRoutesException extends DomainException {
   private final String placeName;
 
   @Override

@@ -1,11 +1,11 @@
 package dev.fizlrock.waterwalk.domain.exception;
 
 /** LocationNameNotFoundException */
-public class PlaceNameNotFoundException extends DomainException {
+public class LocationNameNotFoundException extends DomainException {
 
   private final String locationName;
 
-  public PlaceNameNotFoundException(String locationName) {
+  public LocationNameNotFoundException(String locationName) {
     this.locationName = locationName;
   }
 
