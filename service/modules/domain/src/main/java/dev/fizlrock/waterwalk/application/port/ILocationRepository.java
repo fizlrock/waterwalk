@@ -15,14 +15,6 @@ public interface ILocationRepository {
 
   public void removeByName(String name);
 
-  /**
-   * Имеет ли место с указанным именем маршруты
-   *
-   * @param name
-   * @return
-   */
-  public boolean hasRoutesWithName(String name);
-
   public void updateByName(String place_name, Location p);
 
   public List<Location> findAll(int skip, int limit);

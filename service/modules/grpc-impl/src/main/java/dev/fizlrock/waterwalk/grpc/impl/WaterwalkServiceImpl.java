@@ -1,6 +1,6 @@
 package dev.fizlrock.waterwalk.grpc.impl;
 
-import dev.fizlrock.waterwalk.domain.service.LocationService;
+import dev.fizlrock.waterwalk.application.port.IWaterwalkService;
 import dev.fizlrock.waterwalk.grpc.api.Location;
 import dev.fizlrock.waterwalk.grpc.api.SkipLimit;
 import dev.fizlrock.waterwalk.grpc.api.WaterwalkServiceGrpc.WaterwalkServiceImplBase;
@@ -12,8 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @GrpcService
 public class WaterwalkServiceImpl extends WaterwalkServiceImplBase {
 
-  @Autowired
-  LocationService placeService;
+  @Autowired IWaterwalkService service;
 
   @Override
   public void getLocationList(SkipLimit request, StreamObserver<Location> responseObserver) {
