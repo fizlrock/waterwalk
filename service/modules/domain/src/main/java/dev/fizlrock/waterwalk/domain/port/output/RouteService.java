@@ -1,10 +1,10 @@
-package dev.fizlrock.waterwalk.domain.service;
+package dev.fizlrock.waterwalk.domain.port.output;
 
 import dev.fizlrock.waterwalk.domain.entity.Route;
 import dev.fizlrock.waterwalk.domain.exception.PlaceNameNotFoundException;
 import dev.fizlrock.waterwalk.domain.exception.RouteNameNotFoundException;
-import dev.fizlrock.waterwalk.domain.repository.LocationRepository;
-import dev.fizlrock.waterwalk.domain.repository.RouteRepository;
+import dev.fizlrock.waterwalk.domain.port.input.LocationRepository;
+import dev.fizlrock.waterwalk.domain.port.input.RouteRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

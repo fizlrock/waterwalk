@@ -1,14 +1,9 @@
 package dev.fizlrock.waterwalk.domain.entity;
 
-import dev.fizlrock.waterwalk.domain.exception.time.TimeConflictException;
 import dev.fizlrock.waterwalk.domain.values.Difficulty;
 import dev.fizlrock.waterwalk.domain.values.Distance;
 import dev.fizlrock.waterwalk.domain.values.Price;
 import java.time.Duration;
-import java.time.Instant;
-import java.util.Comparator;
-import java.util.SortedSet;
-import java.util.TreeSet;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -23,31 +18,31 @@ public class Route {
   private Duration duration;
   private Price price;
 
-  private Comparator<RoutePlan> plannedRouteComparator =
-      Comparator.comparing(RoutePlan::getStartTime);
+  // private Comparator<RoutePlan> plannedRouteComparator =
+  //     Comparator.comparing(RoutePlan::getStartTime);
 
-  private SortedSet<RoutePlan> plans = new TreeSet<>(plannedRouteComparator);
+  // private SortedSet<RoutePlan> plans = new TreeSet<>(plannedRouteComparator);
 
-  public RoutePlan planRoute(Instant time) {
-    var plan = new RoutePlan(time);
+  // public RoutePlan planRoute(Instant time) {
+  //   var plan = new RoutePlan(time);
 
-    var before_times = plans.headSet(plan);
-    var after_times = plans.tailSet(plan);
+  //   var before_times = plans.headSet(plan);
+  //   var after_times = plans.tailSet(plan);
 
-    if (!before_times.isEmpty()) {
-      var before_time = before_times.last().getStartTime().plus(duration);
-      if (time.isBefore(before_time)) throw new TimeConflictException(time, before_time);
-    }
+  //   if (!before_times.isEmpty()) {
+  //     var before_time = before_times.last().getStartTime().plus(duration);
+  //     if (time.isBefore(before_time)) throw new TimeConflictException(time, before_time);
+  //   }
 
-    if (!after_times.isEmpty()) {
-      var after_time = after_times.first().getStartTime();
-      if (time.plus(duration).isAfter(after_time))
-        throw new TimeConflictException(time, after_time);
-    }
+  //   if (!after_times.isEmpty()) {
+  //     var after_time = after_times.first().getStartTime();
+  //     if (time.plus(duration).isAfter(after_time))
+  //       throw new TimeConflictException(time, after_time);
+  //   }
 
-    plans.add(plan);
-    return plan;
-  }
+  //   plans.add(plan);
+  //   return plan;
+  // }
 
   /**
    * Установка имени должна осуществлятся только через объект Place

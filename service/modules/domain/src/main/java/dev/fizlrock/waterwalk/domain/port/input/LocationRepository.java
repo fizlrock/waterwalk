@@ -1,4 +1,4 @@
-package dev.fizlrock.waterwalk.domain.repository;
+package dev.fizlrock.waterwalk.domain.port.input;
 
 import dev.fizlrock.waterwalk.domain.entity.Location;
 import java.util.List;

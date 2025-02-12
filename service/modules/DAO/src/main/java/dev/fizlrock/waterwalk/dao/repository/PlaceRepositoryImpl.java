@@ -3,6 +3,7 @@ package dev.fizlrock.waterwalk.dao.repository;
 import dev.fizlrock.waterwalk.dao.jdbc.PlaceEntityRepository;
 import dev.fizlrock.waterwalk.dao.mapper.PlaceMapper;
 import dev.fizlrock.waterwalk.domain.entity.Location;
+import dev.fizlrock.waterwalk.domain.port.input.LocationRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

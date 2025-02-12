@@ -1,6 +1,6 @@
 package dev.fizlrock.waterwalk.grpc.impl;
 
-import dev.fizlrock.waterwalk.domain.service.PlaceService;
+import dev.fizlrock.waterwalk.domain.port.output.PlaceService;
 import dev.fizlrock.waterwalk.grpc.api.Location;
 import dev.fizlrock.waterwalk.grpc.api.SkipLimit;
 import dev.fizlrock.waterwalk.grpc.api.WaterwalkServiceGrpc.WaterwalkServiceImplBase;
