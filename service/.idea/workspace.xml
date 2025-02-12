@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59821d6b-1af7-4866-91b5-5ff7951a31e6" name="Changes" comment="place -&gt; location">
+    <list default="true" id="59821d6b-1af7-4866-91b5-5ff7951a31e6" name="Changes" comment="locationRepository">
+      <change afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/jdbc/LocationEntityRepositoryCustom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/jdbc/LocationEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/jdbc/LocationEntityRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/LocationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/domain/src/main/java/dev/fizlrock/waterwalk/application/port/ILocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/domain/src/main/java/dev/fizlrock/waterwalk/application/port/ILocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DAO/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/domain/src/main/java/dev/fizlrock/waterwalk/domain/entity/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/domain/src/main/java/dev/fizlrock/waterwalk/domain/entity/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/grpc/dev/fizlrock/waterwalk/grpc/api/WaterwalkServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/grpc/dev/fizlrock/waterwalk/grpc/api/WaterwalkServiceGrpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteLocationRq.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteLocationRq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteLocationRqOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteLocationRqOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteRouteRq.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteRouteRq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteRouteRqOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteRouteRqOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/LocationOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/LocationOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/RouteDifficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/RouteDifficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/RouteOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/RouteOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/SkipLimit.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/SkipLimit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/SkipLimitOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/SkipLimitOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/UpdateLocationRq.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/UpdateLocationRq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/UpdateLocationRqOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/UpdateLocationRqOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Void.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Void.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/VoidOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/VoidOrBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +42,36 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/modules/app">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="waterwalk-modules" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="waterwalk-modules" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="waterwalk-modules" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="waterwalk-modules" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -71,6 +114,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.service [build].executor": "Run",
+    "Gradle.service:modules:app [bootRun].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -78,6 +123,58 @@
     "last_opened_file_path": "C:/Users/George/AndroidStudioProjects/Waterwalk/service"
   }
 }]]></component>
+  <component name="RunManager" selected="Gradle.service:modules:app [bootRun]">
+    <configuration name="service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="service:modules:app [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/modules/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.service:modules:app [bootRun]" />
+        <item itemvalue="Gradle.service [build]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -95,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739378847802</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="locationRepository">
+      <option name="closed" value="true" />
+      <created>1739381008496</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739381008496</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,6 +216,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="place -&gt; location" />
-    <option name="LAST_COMMIT_MESSAGE" value="place -&gt; location" />
+    <MESSAGE value="locationRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="locationRepository" />
   </component>
 </project>
