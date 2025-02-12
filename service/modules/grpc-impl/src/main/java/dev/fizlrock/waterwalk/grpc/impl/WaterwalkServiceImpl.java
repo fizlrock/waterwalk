@@ -1,14 +1,9 @@
 package dev.fizlrock.waterwalk.grpc.impl;
 
-import dev.fizlrock.waterwalk.domain.entity.Place;
 import dev.fizlrock.waterwalk.domain.service.PlaceService;
-import dev.fizlrock.waterwalk.grpc.api.DeleteLocationRq;
 import dev.fizlrock.waterwalk.grpc.api.Location;
 import dev.fizlrock.waterwalk.grpc.api.SkipLimit;
-import dev.fizlrock.waterwalk.grpc.api.UpdateLocationRq;
-import dev.fizlrock.waterwalk.grpc.api.Void;
 import dev.fizlrock.waterwalk.grpc.api.WaterwalkServiceGrpc.WaterwalkServiceImplBase;
-import dev.fizlrock.waterwalk.grpc.mapper.PlaceMapper;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,45 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class WaterwalkServiceImpl extends WaterwalkServiceImplBase {
 
   @Autowired PlaceService placeService;
-  @Autowired PlaceMapper placeMapper;
 
   @Override
   public void getLocationList(SkipLimit request, StreamObserver<Location> responseObserver) {
-    var places = placeService.getAllPlaces((int) request.getSkip(), (int) request.getLimit());
-    places.stream().map(placeMapper::toDto).forEach(responseObserver::onNext);
-    responseObserver.onCompleted();
-  }
 
-  @Override
-  public void createLocation(
-      Location request, StreamObserver<dev.fizlrock.waterwalk.grpc.api.Void> responseObserver) {
-    Place place = new Place(request.getName(), request.getDescription());
-    placeService.saveNew(place);
+    var location = Location.newBuilder().setName("sosat").setDescription("otososi").build();
 
-    responseObserver.onNext(Void.newBuilder().build());
-    responseObserver.onCompleted();
-  }
+    responseObserver.onNext(location);
 
-  @Override
-  public void deleteLocation(
-      DeleteLocationRq request, io.grpc.stub.StreamObserver<Void> responseObserver) {
-
-    placeService.deleteByName(request.getLocationName());
-
-    responseObserver.onNext(Void.newBuilder().build());
-    responseObserver.onCompleted();
-  }
-
-  @Override
-  public void updateLocation(
-      UpdateLocationRq request, io.grpc.stub.StreamObserver<Void> responseObserver) {
-
-    var location = request.getLocation();
-    var place = placeMapper.toDomain(location);
-
-    placeService.updateExisting(request.getOldName(), place);
-
-    responseObserver.onNext(Void.newBuilder().build());
     responseObserver.onCompleted();
   }
 }

@@ -3,7 +3,7 @@ package dev.fizlrock.waterwalk.dao.repository;
 import dev.fizlrock.waterwalk.dao.jdbc.RouteEntityRepository;
 import dev.fizlrock.waterwalk.dao.mapper.RouteMapper;
 import dev.fizlrock.waterwalk.domain.entity.Route;
-import dev.fizlrock.waterwalk.domain.repository.RouteRepository;
+import dev.fizlrock.waterwalk.domain.port.input.RouteRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

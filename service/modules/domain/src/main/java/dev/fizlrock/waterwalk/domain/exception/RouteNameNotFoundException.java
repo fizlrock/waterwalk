@@ -1,9 +1,15 @@
 package dev.fizlrock.waterwalk.domain.exception;
 
+import lombok.RequiredArgsConstructor;
+
 /** RouteNameNotFoundException */
+@RequiredArgsConstructor
 public class RouteNameNotFoundException extends DomainException {
 
-  public RouteNameNotFoundException(String routeName, String locationName) {
-    super("Маршрут с именем %d не найден в локации %d".formatted(routeName, locationName));
+  private final String routeName, locationName;
+
+  @Override
+  public String getMessage() {
+    return "Маршрут с именем %d не найден в локации %d".formatted(routeName, locationName);
   }
 }

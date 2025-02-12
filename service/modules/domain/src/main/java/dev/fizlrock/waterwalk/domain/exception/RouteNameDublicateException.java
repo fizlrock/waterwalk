@@ -1,9 +1,16 @@
 package dev.fizlrock.waterwalk.domain.exception;
 
-/** RouteNameDublicateException */
-public class RouteNameDublicateException extends DomainException {
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-  public RouteNameDublicateException(String text) {
-    super("Место уже содержит маршрут с именем %s".formatted(text));
+/** RouteNameDublicateException */
+@Getter
+@RequiredArgsConstructor
+public class RouteNameDublicateException extends DomainException {
+  private final String placeName, routeName;
+
+  @Override
+  public String getMessage() {
+    return "Место <%s> уже содержит маршрут с именем <%s>".formatted(placeName, routeName);
   }
 }
