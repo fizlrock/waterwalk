@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59821d6b-1af7-4866-91b5-5ff7951a31e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/LocationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="59821d6b-1af7-4866-91b5-5ff7951a31e6" name="Changes" comment="place -&gt; location">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/PlaceRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/RouteRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/jdbc/LocationEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/jdbc/LocationEntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/LocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/domain/src/main/java/dev/fizlrock/waterwalk/application/port/ILocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/domain/src/main/java/dev/fizlrock/waterwalk/application/port/ILocationRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +87,15 @@
       <option name="presentableId" value="Default" />
       <updated>1739041080075</updated>
     </task>
+    <task id="LOCAL-00001" summary="place -&gt; location">
+      <option name="closed" value="true" />
+      <created>1739378847802</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739378847802</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,6 +110,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="place -&gt; location" />
+    <option name="LAST_COMMIT_MESSAGE" value="place -&gt; location" />
   </component>
 </project>
