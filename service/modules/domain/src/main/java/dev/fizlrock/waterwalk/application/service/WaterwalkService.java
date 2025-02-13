@@ -9,6 +9,7 @@ import dev.fizlrock.waterwalk.application.port.dto.LocationDto;
 import dev.fizlrock.waterwalk.application.port.dto.LocationListRsp;
 import dev.fizlrock.waterwalk.application.port.dto.UpdateLocationRq;
 import dev.fizlrock.waterwalk.domain.entity.Location;
+import dev.fizlrock.waterwalk.domain.exception.LocationNameDublicateException;
 import dev.fizlrock.waterwalk.domain.exception.LocationNameNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,8 @@ public class WaterwalkService implements IWaterwalkService {
             .findByName(rq.getLocationName())
             .orElseThrow(() -> new LocationNameNotFoundException(rq.getLocationName()));
 
+    locationRepository.removeByName(rq.getLocationName());
+
     return new LocationDto(location.getLocationName(), location.getLocationName());
   }
 
@@ -58,6 +61,10 @@ public class WaterwalkService implements IWaterwalkService {
   public LocationDto createLocaton(CreateLocationRq rq) {
 
     LocationDto dto = rq.getLocation();
+    var loc_name = rq.getLocation().getLocationName();
+
+    if (locationRepository.findByName(loc_name).isPresent())
+      throw new LocationNameDublicateException(loc_name);
 
     var location = new Location(dto.getLocationName(), dto.getComment());
 

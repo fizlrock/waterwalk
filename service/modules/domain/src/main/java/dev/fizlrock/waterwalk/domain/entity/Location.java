@@ -20,6 +20,11 @@ public class Location {
     setComment(comment);
   }
 
+  @Override
+  public String toString() {
+    return locationName + " " + comment;
+  }
+
   // public Collection<Route> getRoutes() {
   //   return Collections.unmodifiableCollection(routes.values());
   // }
