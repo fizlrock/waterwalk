@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.waterwalk.data.repository.WaterWalkRepository
 import com.example.waterwalk.domain.model.Location
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -17,17 +18,15 @@ class WaterWalkRepositoryImpl @Inject constructor(
     override fun getLocations(skip: Long, limit: Long): Flow<List<Location>> {
         Log.d(TAG, "Request to get locations with skip: $skip, limit: $limit")
         return flow {
-            try {
-                val locations = mutableListOf<Location>()
-                waterWalkGrpcService.getLocationList(skip, limit).collect { grpcLocation ->
-                    locations.add(Location(name = grpcLocation.name, description = grpcLocation.description))
-                }
-                Log.d(TAG, "Received ${locations.size} locations")
-                emit(locations)
-            } catch (e: Exception) {
-                Log.e(TAG, "Error while fetching locations", e)
-                throw e // Re-throw the exception for upstream handling
+            val locations = mutableListOf<Location>()
+            waterWalkGrpcService.getLocationList(skip, limit).collect { grpcLocation ->
+                locations.add(Location(name = grpcLocation.name, description = grpcLocation.description))
             }
+            Log.d(TAG, "Received ${locations.size} locations")
+            emit(locations)
+        }.catch { error ->
+            Log.e(TAG, "Flow catch: ${error.localizedMessage}")
+            throw error
         }
     }
 

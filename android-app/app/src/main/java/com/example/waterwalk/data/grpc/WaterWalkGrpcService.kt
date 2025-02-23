@@ -1,5 +1,6 @@
 package com.example.waterwalk.data.grpc
 
+import GrpcChannelProvider
 import android.util.Log
 import dev.fizlrock.waterwalk.grpc.api.*
 import io.grpc.Status
@@ -18,7 +19,7 @@ class WaterWalkGrpcService {
             val request = SkipLimit.newBuilder().setSkip(skip).setLimit(limit).build()
 
             // Создаём новый stub с новым deadline при каждом вызове!
-            val stubWithTimeout = GrpcClient.newStub().withDeadlineAfter(5, TimeUnit.SECONDS)
+            val stubWithTimeout = GrpcChannelProvider.newStub().withDeadlineAfter(5, TimeUnit.SECONDS)
 
             val responseObserver = object : io.grpc.stub.StreamObserver<Location> {
                 override fun onNext(value: Location) {
@@ -27,17 +28,25 @@ class WaterWalkGrpcService {
                 }
 
                 override fun onError(t: Throwable) {
-                    if (t is StatusRuntimeException && t.status.code == Status.Code.UNAVAILABLE) {
-                        Log.e(TAG, "gRPC Server unavailable. Check if it's running and reachable.")
-                    } else {
-                        Log.e(TAG, "Unexpected gRPC error", t)
+                    Log.e(TAG, "gRPC error: ${t.localizedMessage}")
+                    if (t is StatusRuntimeException) {
+                        when (t.status.code) {
+                            Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE -> {
+                                Log.e(TAG, "Closing gRPC channel due to connection issues")
+                                GrpcChannelProvider.shutdown()  // Закрываем канал вручную
+                            }
+
+                            else -> {
+                                Log.e(TAG, "Other gRPC error: ${t.status.code}")
+                            }
+                        }
                     }
-                    close(t)
+                    channel.close(t)
                 }
 
                 override fun onCompleted() {
                     Log.d(TAG, "gRPC call completed")
-                    close()
+                    channel.close()
                 }
             }
 
@@ -45,17 +54,16 @@ class WaterWalkGrpcService {
 
         } catch (e: Exception) {
             Log.e(TAG, "Error in getLocations", e)
-            close(e)
         }
         awaitClose {
-            Log.d(TAG, "Shutting down gRPC channel")
+            Log.d(TAG, "gRPC call ended")
         }
     }
 
     suspend fun createLocation(location: Location): Result<Unit> {
         Log.d(TAG, "Send request to create location: ${location.name}")
         return try {
-            val stub = GrpcClient.newBlockingStub()
+            val stub = GrpcChannelProvider.newBlockingStub()
             stub.createLocation(location)
             Log.d(TAG, "Location created: ${location.name}")
             Result.success(Unit) // Успешный результат
@@ -68,7 +76,7 @@ class WaterWalkGrpcService {
     suspend fun deleteLocation(locationName: String): Result<Unit> {
         Log.d(TAG, "Send request to delete location: $locationName")
         return try {
-            val stub = GrpcClient.newBlockingStub()
+            val stub = GrpcChannelProvider.newBlockingStub()
             val request = DeleteLocationRq.newBuilder()
                 .setLocationName(locationName)
                 .build()
@@ -84,7 +92,7 @@ class WaterWalkGrpcService {
     suspend fun updateLocation(oldName: String, newLocation: Location): Result<Unit> {
         Log.d(TAG, "Send request to update location: $oldName to ${newLocation.name}")
         return try {
-            val stub = GrpcClient.newBlockingStub()
+            val stub = GrpcChannelProvider.newBlockingStub()
             val request = UpdateLocationRq.newBuilder()
                 .setOldName(oldName)
                 .setLocation(newLocation)
@@ -97,4 +105,5 @@ class WaterWalkGrpcService {
             Result.failure(e) // Ошибка
         }
     }
+
 }

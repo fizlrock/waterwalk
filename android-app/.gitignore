@@ -4,8 +4,8 @@
 local.properties
 
 # Gradle
-.gradle/
-build/
+.gradle
+build
 **/build/
 
 # Android specific
