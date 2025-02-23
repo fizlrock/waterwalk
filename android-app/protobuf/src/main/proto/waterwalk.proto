@@ -1,0 +1,35 @@
+syntax = "proto3";
+package dev.fizlrock.waterwalk.grpc;
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "dev.fizlrock.waterwalk.grpc.api";
+
+service WaterwalkService {
+  rpc getLocationList(SkipLimit) returns (stream Location);
+  rpc createLocation(Location) returns (Void);
+  rpc deleteLocation(DeleteLocationRq) returns (Void);
+  rpc updateLocation(UpdateLocationRq) returns (Void);
+}
+
+message UpdateLocationRq {
+  string old_name = 1;
+  Location location = 2;
+}
+
+message DeleteLocationRq {
+  string location_name = 1;
+}
+
+message SkipLimit {
+  int64 skip = 1;
+  int64 limit = 2;
+}
+
+message Location {
+  string name = 2;
+  string description = 3;
+}
+
+message Void {}
