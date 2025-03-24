@@ -4,30 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59821d6b-1af7-4866-91b5-5ff7951a31e6" name="Changes" comment="locationRepository">
-      <change afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/jdbc/LocationEntityRepositoryCustom.java" afterDir="false" />
+    <list default="true" id="59821d6b-1af7-4866-91b5-5ff7951a31e6" name="Changes" comment="пупупууу">
+      <change afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/data/grpc/GrpcChannelProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/data/grpc/GrpcClient.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/data/grpc/WaterWalkGrpcService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/data/grpc/WaterWalkGrpcService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/data/grpc/WaterWalkRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/data/grpc/WaterWalkRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/domain/usecase/GetLocationsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/domain/usecase/GetLocationsUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/presentation/components/BottomNavigationBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/presentation/components/BottomNavigationBar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/presentation/screens/LocationListScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/presentation/screens/LocationListScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/presentation/screens/MainScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/presentation/screens/MainScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/presentation/viewmodel/LocationViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/app/src/main/java/com/example/waterwalk/presentation/viewmodel/LocationViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android-app/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../android-app/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/jdbc/LocationEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/jdbc/LocationEntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DAO/src/main/java/dev/fizlrock/waterwalk/dao/repository/LocationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/DAO/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DAO/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/domain/src/main/java/dev/fizlrock/waterwalk/domain/entity/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/domain/src/main/java/dev/fizlrock/waterwalk/domain/entity/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/grpc/dev/fizlrock/waterwalk/grpc/api/WaterwalkServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/grpc/dev/fizlrock/waterwalk/grpc/api/WaterwalkServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Contract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteLocationRq.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteLocationRq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteLocationRqOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteLocationRqOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteRouteRq.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteRouteRq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteRouteRqOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/DeleteRouteRqOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/LocationOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/LocationOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/RouteDifficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/RouteDifficulty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/RouteOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/RouteOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/SkipLimit.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/SkipLimit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/SkipLimitOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/SkipLimitOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/UpdateLocationRq.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/UpdateLocationRq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/UpdateLocationRqOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/UpdateLocationRqOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Void.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/Void.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/VoidOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/grpc-api/src/generated/main/java/dev/fizlrock/waterwalk/grpc/api/VoidOrBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,18 +80,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "yxngxr1"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;yxngxr1&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/fizlrock/waterwalk.git",
-    "accountId": "863bfed7-1f17-4435-adc6-01c49fa9406a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/fizlrock/waterwalk.git&quot;,
+    &quot;accountId&quot;: &quot;863bfed7-1f17-4435-adc6-01c49fa9406a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -112,17 +102,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.service [build].executor": "Run",
-    "Gradle.service:modules:app [bootRun].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/George/AndroidStudioProjects/Waterwalk/service"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.service:modules:app [bootRun].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/George/AndroidStudioProjects/Waterwalk/service&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.service:modules:app [bootRun]">
     <configuration name="service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -200,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739381008496</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="пупупууу">
+      <option name="closed" value="true" />
+      <created>1739383455842</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739383455842</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +215,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="place -&gt; location" />
     <MESSAGE value="locationRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="locationRepository" />
+    <MESSAGE value="пупупууу" />
+    <option name="LAST_COMMIT_MESSAGE" value="пупупууу" />
   </component>
 </project>
