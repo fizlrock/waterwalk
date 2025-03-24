@@ -5,9 +5,9 @@ plugins {
 dependencies {
 
 
-  implementation project(":domain")   
-  implementation project(":DAO")   
-  implementation project(":grpc-impl")   
+  implementation project(":grpc-api")   
+  implementation project(":waterwalk-application")   
+  implementation project(":infrastructure")   
 
   implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
   implementation "org.springframework.modulith:spring-modulith-starter-core:${springModulithVersion}"

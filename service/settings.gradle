@@ -8,14 +8,12 @@ pluginManagement {
 
 rootProject.name = 'waterwalk-modules'
 
-include 'domain'
+include 'waterwalk-application'
 include 'app'
 include 'grpc-api'
-include 'grpc-impl'
-include 'DAO'
+include 'infrastructure'
 
-project(':domain').projectDir = file('modules/domain')
 project(':app').projectDir = file('modules/app')
+project(':infrastructure').projectDir = file('modules/infrastructure')
 project(':grpc-api').projectDir = file('modules/grpc-api')
-project(':grpc-impl').projectDir = file('modules/grpc-impl')
-project(':DAO').projectDir = file('modules/DAO')
+project(':waterwalk-application').projectDir = file('modules/waterwalk-application')

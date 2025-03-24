@@ -1,0 +1,14 @@
+
+
+
+
+
+spring:
+  grpc:
+    server:
+      port: 9090
+
+
+logging:
+  level:
+    root: info

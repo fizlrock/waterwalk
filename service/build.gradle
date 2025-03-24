@@ -1,18 +1,105 @@
 
+
+
+
 plugins {
+
     id 'java'
+    id 'io.spring.dependency-management' version "${springDependencyManagement}"
+    // id 'org.springframework.boot' version "${springBootVersion}"
+    id "io.freefair.lombok" version "8.12.1"
+    id "io.gitlab.plunts.plantuml" version "2.2.0"
+    // id 'spring-boot-devtools'
 }
 
 
-
-
-
-subprojects {
-    apply plugin: 'java'
+allprojects {
+    group = 'dev.fizlrock'
+    version = '1.0.0'
 
     repositories {
         mavenCentral()
-        mavenLocal()
     }
 
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-parameters"
+    }
 }
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'io.freefair.lombok'
+
+    dependencies {
+        implementation 'org.springframework:spring-context'
+
+        implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+        annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+        implementation "org.springframework.modulith:spring-modulith-starter-core:${springModulithVersion}"
+        implementation "org.springframework.modulith:spring-modulith-core:${springModulithVersion}"
+        implementation "org.springframework.modulith:spring-modulith-docs:${springModulithVersion}"
+
+
+        testImplementation 'org.springframework.modulith:spring-modulith-starter-test'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        		mavenBom "org.springframework.modulith:spring-modulith-bom:${springModulithVersion}"
+        }
+    }
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed" // Показывать события тестов
+            showStandardStreams = true // Показывать вывод System.out/System.err
+            exceptionFormat "full" // Полные stack traces для ошибок
+        }
+    }
+}
+
+
+
+classDiagrams {
+    plantumlServer = 'https://www.plantuml.com/plantuml'
+
+    defaults {
+        dontInheritDefaults()
+        exclude classes().annotatedWith("lombok.Generated")
+        exclude classes().annotatedWith("javax.annotation.processing.Generated")
+        exclude methods().withName("builder")
+    }
+    diagram {
+        name "Visualise Package"
+        include packages().withName("dev.fizlrock")
+        exclude packages().withName("dev.fizlrock.todo.domain.service.dto")
+        exclude packages().withName("dev.fizlrock.todo.domain.exception")
+        writeTo file('diagrams/full_package.puml')
+        renderTo file('diagrams/full_package.svg')
+    }
+    diagram {
+        name "DTO diagram"
+        include packages().withName("dev.fizlrock.todo.domain.service.dto")
+        exclude classes().outsideOfProject()
+        writeTo file('diagrams/dtos.puml')
+        renderTo file('diagrams/dtos.svg')
+    }
+    diagram {
+        name "Exception diagram"
+        include packages().withName("dev.fizlrock.todo.domain.exception")
+        exclude classes().outsideOfProject()
+        writeTo file('diagrams/exceptions.puml')
+        renderTo file('diagrams/exceptions.svg')
+    }
+    // diagram {
+    //     name "DTO diagram"
+    //     writeTo file("diagrams/dtos.puml")
+    // }
+}
+
+
