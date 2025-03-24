@@ -11,11 +11,13 @@ import dev.fizlrock.waterwalk.grpc.api.Void;
 import dev.fizlrock.waterwalk.grpc.api.WaterwalkServiceGrpc.WaterwalkServiceImplBase;
 import io.grpc.stub.StreamObserver;
 import java.util.Optional;
+import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /** WaterwalkServiceImpl */
 @Component
+@GrpcService
 public class WaterwalkServiceImpl extends WaterwalkServiceImplBase {
 
   @Autowired ILocationRepository locRepository;
@@ -23,7 +25,11 @@ public class WaterwalkServiceImpl extends WaterwalkServiceImplBase {
 
   @Override
   public void getLocationList(Void request, StreamObserver<LocationDto> responseObserver) {
-    locRepository.findAll().stream().map(locMapper::toDto).forEach(responseObserver::onNext);
+    var locations = locRepository.findAll();
+
+    System.out.println(locations);
+
+    locations.stream().map(locMapper::toDto).forEach(responseObserver::onNext);
     responseObserver.onCompleted();
   }
 
@@ -39,6 +45,7 @@ public class WaterwalkServiceImpl extends WaterwalkServiceImplBase {
 
     locRepository.save(new_loc);
 
+    responseObserver.onNext(Void.newBuilder().build());
     responseObserver.onCompleted();
   }
 

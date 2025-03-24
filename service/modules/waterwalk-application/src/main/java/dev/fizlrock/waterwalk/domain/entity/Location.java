@@ -17,14 +17,14 @@ public class Location {
   /** Описание места */
   private String comment;
 
-  public Location(String locationName, String comment) {
-    this(new LocationId(UUID.randomUUID()), locationName, comment);
+  public Location(String name, String comment) {
+    this(new LocationId(UUID.randomUUID()), name, comment);
   }
 
   @PersistenceCreator
-  public Location(LocationId id, String locationName, String comment) {
+  public Location(LocationId id, String name, String comment) {
     this.id = id;
-    setName(locationName);
+    setName(name);
     setComment(comment);
   }
 

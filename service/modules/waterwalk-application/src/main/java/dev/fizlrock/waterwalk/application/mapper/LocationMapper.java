@@ -8,7 +8,13 @@ import org.mapstruct.Mapper;
 /** LocationMapper */
 @Mapper(componentModel = "spring")
 public interface LocationMapper {
-  LocationDto toDto(Location loc);
+  default LocationDto toDto(Location loc) {
+    return LocationDto.newBuilder()
+        .setId(loc.getId().toString())
+        .setName(loc.getName())
+        .setDescription(loc.getComment())
+        .build();
+  }
 
   String toDto(LocationId id);
 }
