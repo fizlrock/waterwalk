@@ -19,5 +19,5 @@ public interface ILocationRepository {
 
   public List<Location> findAll(int skip, int limit);
 
-  public void save(Location place);
+  public void save(Location location);
 }

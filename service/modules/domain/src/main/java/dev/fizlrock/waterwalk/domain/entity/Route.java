@@ -4,53 +4,42 @@ import dev.fizlrock.waterwalk.domain.values.Difficulty;
 import dev.fizlrock.waterwalk.domain.values.Distance;
 import dev.fizlrock.waterwalk.domain.values.Price;
 import java.time.Duration;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
 @Getter
 public class Route {
 
+  private final RouteId id;
+
+  private LocationId locationId;
+
   private String name;
   private String comment;
+
   private Distance distance;
+
   private Difficulty difficulty;
   private Duration duration;
   private Price price;
 
-  // private Comparator<RoutePlan> plannedRouteComparator =
-  //     Comparator.comparing(RoutePlan::getStartTime);
+  public Route(
+      RouteId id,
+      LocationId locId,
+      String name,
+      String comment,
+      Distance dist,
+      Difficulty difficulty,
+      Duration duration,
+      Price price) {
 
-  // private SortedSet<RoutePlan> plans = new TreeSet<>(plannedRouteComparator);
-
-  // public RoutePlan planRoute(Instant time) {
-  //   var plan = new RoutePlan(time);
-
-  //   var before_times = plans.headSet(plan);
-  //   var after_times = plans.tailSet(plan);
-
-  //   if (!before_times.isEmpty()) {
-  //     var before_time = before_times.last().getStartTime().plus(duration);
-  //     if (time.isBefore(before_time)) throw new TimeConflictException(time, before_time);
-  //   }
-
-  //   if (!after_times.isEmpty()) {
-  //     var after_time = after_times.first().getStartTime();
-  //     if (time.plus(duration).isAfter(after_time))
-  //       throw new TimeConflictException(time, after_time);
-  //   }
-
-  //   plans.add(plan);
-  //   return plan;
-  // }
-
-  /**
-   * Установка имени должна осуществлятся только через объект Place
-   *
-   * @param name
-   */
-  void setName(String name) {
-    this.name = name;
+    this.id = id;
+    locationId = locId;
+    setName(name);
+    setComment(comment);
+    setDistance(dist);
+    setDifficulty(difficulty);
+    setDuration(duration);
+    setPrice(price);
   }
 
   public void setComment(String comment) {
@@ -73,5 +62,18 @@ public class Route {
 
   public void setPrice(Price price) {
     this.price = price;
+  }
+
+  protected void setLocationId(LocationId locationId) {
+    this.locationId = locationId;
+  }
+
+  /**
+   * Установка имени должна осуществлятся только через объект Place
+   *
+   * @param name
+   */
+  void setName(String name) {
+    this.name = name;
   }
 }

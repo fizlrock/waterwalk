@@ -1,16 +1,20 @@
 package dev.fizlrock.waterwalk.application.service;
 
+import dev.fizlrock.waterwalk.application.mapper.LocationMapper;
+import dev.fizlrock.waterwalk.application.mapper.RouteMapper;
 import dev.fizlrock.waterwalk.application.port.ILocationRepository;
 import dev.fizlrock.waterwalk.application.port.IWaterwalkService;
-import dev.fizlrock.waterwalk.application.port.dto.CreateLocationRq;
-import dev.fizlrock.waterwalk.application.port.dto.DeleteLocationRq;
-import dev.fizlrock.waterwalk.application.port.dto.GetLocationListRq;
+import dev.fizlrock.waterwalk.application.port.dto.LocationCreateRq;
+import dev.fizlrock.waterwalk.application.port.dto.LocationDeleteRq;
 import dev.fizlrock.waterwalk.application.port.dto.LocationDto;
+import dev.fizlrock.waterwalk.application.port.dto.LocationListGetRq;
 import dev.fizlrock.waterwalk.application.port.dto.LocationListRsp;
-import dev.fizlrock.waterwalk.application.port.dto.UpdateLocationRq;
-import dev.fizlrock.waterwalk.domain.entity.Location;
+import dev.fizlrock.waterwalk.application.port.dto.LocationUpdateRq;
+import dev.fizlrock.waterwalk.application.port.dto.RouteCreateRq;
+import dev.fizlrock.waterwalk.application.port.dto.RouteDto;
+import dev.fizlrock.waterwalk.application.port.dto.RouteUpdateRq;
 import dev.fizlrock.waterwalk.domain.exception.LocationNameDublicateException;
-import dev.fizlrock.waterwalk.domain.exception.LocationNameNotFoundException;
+import dev.fizlrock.waterwalk.domain.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,24 +22,23 @@ import org.springframework.stereotype.Service;
 public class WaterwalkService implements IWaterwalkService {
 
   @Autowired ILocationRepository locationRepository;
+  @Autowired LocationService locationService;
+  @Autowired LocationMapper locationMapper;
+  @Autowired RouteMapper routeMapper;
 
   @Override
-  public LocationListRsp getLocationList(GetLocationListRq rq) {
+  public LocationListRsp getLocationList(LocationListGetRq rq) {
     var locations = locationRepository.findAll((int) rq.getSkip(), (int) rq.getLimit());
 
-    var dtos =
-        locations.stream().map(l -> new LocationDto(l.getLocationName(), l.getComment())).toList();
+    var dtos = locations.stream().map(locationMapper::toDto).toList();
 
     return new LocationListRsp(dtos);
   }
 
   @Override
-  public LocationDto updateLocaton(UpdateLocationRq rq) {
+  public LocationDto updateLocaton(LocationUpdateRq rq) {
 
-    var location =
-        locationRepository
-            .findByName(rq.getOldName())
-            .orElseThrow(() -> new LocationNameNotFoundException(rq.getOldName()));
+    var location = locationService.getLocation(rq.getOldName());
 
     location.setLocationName(rq.getLocation().getLocationName());
     location.setComment(rq.getLocation().getComment());
@@ -45,20 +48,17 @@ public class WaterwalkService implements IWaterwalkService {
   }
 
   @Override
-  public LocationDto deleteLocaton(DeleteLocationRq rq) {
+  public LocationDto deleteLocaton(LocationDeleteRq rq) {
 
-    var location =
-        locationRepository
-            .findByName(rq.getLocationName())
-            .orElseThrow(() -> new LocationNameNotFoundException(rq.getLocationName()));
+    var location = locationService.getLocation(rq.getLocationName());
 
     locationRepository.removeByName(rq.getLocationName());
 
-    return new LocationDto(location.getLocationName(), location.getLocationName());
+    return locationMapper.toDto(location);
   }
 
   @Override
-  public LocationDto createLocaton(CreateLocationRq rq) {
+  public LocationDto createLocaton(LocationCreateRq rq) {
 
     LocationDto dto = rq.getLocation();
     var loc_name = rq.getLocation().getLocationName();
@@ -66,10 +66,40 @@ public class WaterwalkService implements IWaterwalkService {
     if (locationRepository.findByName(loc_name).isPresent())
       throw new LocationNameDublicateException(loc_name);
 
-    var location = new Location(dto.getLocationName(), dto.getComment());
+    var location = locationMapper.toDomain(dto);
 
     locationRepository.save(location);
 
     return dto;
+  }
+
+  @Override
+  public RouteDto addRoute(RouteCreateRq rq) {
+    var location = locationService.getLocation(rq.locationName());
+
+    var route = routeMapper.toDomain(rq.route());
+
+    location.addRoute(route);
+
+    locationRepository.save(location);
+
+    throw new UnsupportedOperationException("Unimplemented method 'addRoute'");
+  }
+
+  @Override
+  public RouteDto updateRoute(RouteUpdateRq rq) {
+    var location = locationService.getLocation(rq.locationName());
+
+    var route = location.getRouteByName(rq.oldRouteName());
+
+    location.renameRoute(rq.oldRouteName(), rq.route().name());
+
+    route.setComment(rq.route().comment());
+    route.setDistance(rq.route().distance());
+    route.setComment(rq.route().comment());
+    route.setComment(rq.route().comment());
+
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'updateRoute'");
   }
 }

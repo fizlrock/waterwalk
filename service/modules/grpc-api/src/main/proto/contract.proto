@@ -11,53 +11,61 @@ option java_package = "dev.fizlrock.waterwalk.grpc.api";
 
 // Определяем gRPC-сервис
 service WaterwalkService {
-
   // Location CRUD
-  rpc getLocationList(SkipLimit) returns (stream Location);
-  rpc createLocation(Location) returns (Void);
-  rpc deleteLocation(DeleteLocationRq) returns (Void);
-  rpc updateLocation(UpdateLocationRq) returns (Void);
+  rpc getLocationList(Void) returns (stream Location);
+  rpc createLocation(CreateLocationRq) returns (Void);
+  rpc deleteLocation(Id) returns (Void);
+  rpc updateLocation(Location) returns (Void);
 
+  rpc getRouteList() returns (stream Route);
+  rpc createRoute(CreateRouteRq) returns (Void);
+  rpc deleteRoute(Id) returns (Void);
+  rpc updateRoute(Route) returns (Void);
+
+
+  
 }
 
 
-message UpdateLocationRq {
-  string old_name = 1;
-  Location location = 2;
+// Общее
+message Id {
+  string id = 1;
 }
 
-message DeleteLocationRq {
-  string location_name = 1;
+// Локации
+
+
+message CreateLocationRq {
+  string name = 1;
+  optinal string description = 2;
 }
-
-
-message DeleteRouteRq {
-  string locaton_name = 1;
-  string route_name = 2;
-}
-
-
-message Void {}
-
-message SkipLimit {
-  int64 skip = 1;
-  int64 limit = 2;
-}
-
 
 message Location {
+  string id = 1;
   string name = 2;
   string description = 3;
 }
 
+// Маршруты
+
+message CreateRouteRq {
+  string locationId = 1;
+  string name = 2;
+  string comment = 3;
+  int64 distance = 4; // дистанция в метрах
+  RouteDifficulty difficulty = 5;
+  int64 duration = 6; // продолжительность в минутах
+  int64 price  = 7;// цена в рублях
+} 
 
 message Route {
-  string name = 1;
-  string comment = 2;
-  int64 distance = 3; // дистанция в метрах
-  RouteDifficulty difficulty = 4;
-  int64 duration = 5; // продолжительность в минутах
-  int64 price  = 6;// цена в рублях
+  string id = 1;
+  string name = 2;
+  string comment = 3;
+  int64 distance = 4; // дистанция в метрах
+  RouteDifficulty difficulty = 5;
+  int64 duration = 6; // продолжительность в минутах
+  int64 price  = 7;// цена в рублях
 }
 
 

@@ -3,9 +3,10 @@ package dev.fizlrock.waterwalk.application.port.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-/** GetLocationListRq */
+/** UpdateLocationRq */
 @AllArgsConstructor
 @Getter
-public class GetLocationListRq {
-  private final long skip, limit;
+public class LocationUpdateRq {
+  private final String oldName;
+  private final LocationDto location;
 }
