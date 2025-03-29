@@ -1,16 +1,12 @@
 package dev.fizlrock.waterwalk.application.port;
 
 import dev.fizlrock.waterwalk.domain.entity.Route;
-import java.util.List;
+import dev.fizlrock.waterwalk.domain.entity.RouteId;
+import java.util.Set;
+import java.util.UUID;
+import org.springframework.data.repository.ListCrudRepository;
 
-/** RouteRepository */
-public interface IRouteRepository {
+public interface IRouteRepository extends ListCrudRepository<Route, RouteId> {
 
-  List<Route> getRoutesWherePlace(String placeName);
-
-  void addRouteToPlace(String placeName, Route route);
-
-  void deleteRoute(String placeName, String routeName);
-
-  void updateRoute(String placeName, String oldRouteName, Route route);
+  Set<Route> findByLocationId(UUID uuid);
 }

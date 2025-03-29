@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private RouteDto() {
     id_ = "";
+    locationId_ = "";
     name_ = "";
     comment_ = "";
     difficulty_ = 0;
@@ -75,6 +76,45 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOCATIONID_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationId_ = "";
+  /**
+   * <code>string locationId = 8;</code>
+   * @return The locationId.
+   */
+  @java.lang.Override
+  public java.lang.String getLocationId() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string locationId = 8;</code>
+   * @return The bytes for locationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLocationIdBytes() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      locationId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -257,6 +297,9 @@ private static final long serialVersionUID = 0L;
     if (price_ != 0L) {
       output.writeInt64(7, price_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, locationId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -291,6 +334,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, price_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, locationId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -308,6 +354,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
+    if (!getLocationId()
+        .equals(other.getLocationId())) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!getComment()
@@ -332,6 +380,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + LOCATIONID_FIELD_NUMBER;
+    hash = (53 * hash) + getLocationId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + COMMENT_FIELD_NUMBER;
@@ -479,6 +529,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       id_ = "";
+      locationId_ = "";
       name_ = "";
       comment_ = "";
       distance_ = 0L;
@@ -522,21 +573,24 @@ private static final long serialVersionUID = 0L;
         result.id_ = id_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.name_ = name_;
+        result.locationId_ = locationId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.comment_ = comment_;
+        result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.distance_ = distance_;
+        result.comment_ = comment_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.difficulty_ = difficulty_;
+        result.distance_ = distance_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.duration_ = duration_;
+        result.difficulty_ = difficulty_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.duration_ = duration_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.price_ = price_;
       }
     }
@@ -590,14 +644,19 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getLocationId().isEmpty()) {
+        locationId_ = other.locationId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getComment().isEmpty()) {
         comment_ = other.comment_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getDistance() != 0L) {
@@ -645,34 +704,39 @@ private static final long serialVersionUID = 0L;
             } // case 10
             case 18: {
               name_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               break;
             } // case 18
             case 26: {
               comment_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             } // case 26
             case 32: {
               distance_ = input.readInt64();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               break;
             } // case 32
             case 40: {
               difficulty_ = input.readEnum();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               break;
             } // case 40
             case 48: {
               duration_ = input.readInt64();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               break;
             } // case 48
             case 56: {
               price_ = input.readInt64();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               break;
             } // case 56
+            case 66: {
+              locationId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -762,6 +826,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object locationId_ = "";
+    /**
+     * <code>string locationId = 8;</code>
+     * @return The locationId.
+     */
+    public java.lang.String getLocationId() {
+      java.lang.Object ref = locationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string locationId = 8;</code>
+     * @return The bytes for locationId.
+     */
+    public com.google.protobuf.ByteString
+        getLocationIdBytes() {
+      java.lang.Object ref = locationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        locationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string locationId = 8;</code>
+     * @param value The locationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      locationId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string locationId = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLocationId() {
+      locationId_ = getDefaultInstance().getLocationId();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string locationId = 8;</code>
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      locationId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
@@ -805,7 +941,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -815,7 +951,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -829,7 +965,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -877,7 +1013,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       comment_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -887,7 +1023,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearComment() {
       comment_ = getDefaultInstance().getComment();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -901,7 +1037,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       comment_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -931,7 +1067,7 @@ private static final long serialVersionUID = 0L;
     public Builder setDistance(long value) {
 
       distance_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -944,7 +1080,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDistance() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       distance_ = 0L;
       onChanged();
       return this;
@@ -965,7 +1101,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDifficultyValue(int value) {
       difficulty_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -987,7 +1123,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       difficulty_ = value.getNumber();
       onChanged();
       return this;
@@ -997,7 +1133,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDifficulty() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       difficulty_ = 0;
       onChanged();
       return this;
@@ -1028,7 +1164,7 @@ private static final long serialVersionUID = 0L;
     public Builder setDuration(long value) {
 
       duration_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1041,7 +1177,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       duration_ = 0L;
       onChanged();
       return this;
@@ -1072,7 +1208,7 @@ private static final long serialVersionUID = 0L;
     public Builder setPrice(long value) {
 
       price_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1085,7 +1221,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPrice() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       price_ = 0L;
       onChanged();
       return this;

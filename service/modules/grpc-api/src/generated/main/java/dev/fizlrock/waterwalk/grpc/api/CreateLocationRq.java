@@ -4,6 +4,10 @@
 package dev.fizlrock.waterwalk.grpc.api;
 
 /**
+ * <pre>
+ * Локации
+ * </pre>
+ *
  * Protobuf type {@code dev.fizlrock.waterwalk.grpc.CreateLocationRq}
  */
 public final class CreateLocationRq extends
@@ -299,6 +303,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Локации
+   * </pre>
+   *
    * Protobuf type {@code dev.fizlrock.waterwalk.grpc.CreateLocationRq}
    */
   public static final class Builder extends

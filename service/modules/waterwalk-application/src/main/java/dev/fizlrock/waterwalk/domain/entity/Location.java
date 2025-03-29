@@ -15,7 +15,7 @@ public class Location {
   private String name;
 
   /** Описание места */
-  private String comment;
+  private String comment = "";
 
   public Location(String name, String comment) {
     this(new LocationId(UUID.randomUUID()), name, comment);

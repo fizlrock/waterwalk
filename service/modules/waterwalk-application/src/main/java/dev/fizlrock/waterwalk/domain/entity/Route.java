@@ -85,12 +85,7 @@ public class Route {
     this.locationId = locationId;
   }
 
-  /**
-   * Установка имени должна осуществлятся только через объект Place
-   *
-   * @param name
-   */
-  void setName(String name) {
+  public void setName(String name) {
     this.name = name;
   }
 }

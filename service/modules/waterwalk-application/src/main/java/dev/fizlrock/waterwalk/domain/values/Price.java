@@ -11,6 +11,10 @@ public record Price(int rublesCount) {
     return new Price(price);
   }
 
+  public static Price ofRubles(long price) {
+    return new Price((int) price);
+  }
+
   @Override
   public final String toString() {
     return "%d руб".formatted(rublesCount);

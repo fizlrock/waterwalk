@@ -3,15 +3,18 @@
 
 
 plugins {
-
     id 'java'
     id 'io.spring.dependency-management' version "${springDependencyManagement}"
+    id 'org.springframework.boot'
     // id 'org.springframework.boot' version "${springBootVersion}"
     id "io.freefair.lombok" version "8.12.1"
     id "io.gitlab.plunts.plantuml" version "2.2.0"
     // id 'spring-boot-devtools'
 }
 
+dependencies {
+  implementation project(":app")   
+}
 
 allprojects {
     group = 'dev.fizlrock'
@@ -102,4 +105,19 @@ classDiagrams {
     // }
 }
 
+springBoot {
+    mainClass = 'dev.fizlrock.waterwalk.App' 
+}
+
+
+
+tasks.named("bootBuildImage") {
+
+    builder = "paketobuildpacks/builder-jammy-tiny" 
+
+    imageName = "fizlrock/todo/backend"
+    environment["BP_JVM_VERSION"] = "21"
+
+    
+}
 

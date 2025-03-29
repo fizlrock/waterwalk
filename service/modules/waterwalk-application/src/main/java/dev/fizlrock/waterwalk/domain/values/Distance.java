@@ -11,8 +11,8 @@ public final class Distance {
     this.distance = distanceInMeters;
   }
 
-  public static Distance ofMeters(int distanceInMeters) {
-    return new Distance(distanceInMeters);
+  public static Distance ofMeters(Number distanceInMeters) {
+    return new Distance(distanceInMeters.intValue());
   }
 
   public static Distance ofKMeters(int distanceInKMeters) {

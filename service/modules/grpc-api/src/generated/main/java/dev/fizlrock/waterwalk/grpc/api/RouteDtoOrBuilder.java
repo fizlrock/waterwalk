@@ -20,6 +20,18 @@ public interface RouteDtoOrBuilder extends
       getIdBytes();
 
   /**
+   * <code>string locationId = 8;</code>
+   * @return The locationId.
+   */
+  java.lang.String getLocationId();
+  /**
+   * <code>string locationId = 8;</code>
+   * @return The bytes for locationId.
+   */
+  com.google.protobuf.ByteString
+      getLocationIdBytes();
+
+  /**
    * <code>string name = 2;</code>
    * @return The name.
    */

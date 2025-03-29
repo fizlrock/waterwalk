@@ -11,32 +11,41 @@ option java_package = "dev.fizlrock.waterwalk.grpc.api";
 
 // Определяем gRPC-сервис
 service WaterwalkService {
+
+  
   // Location CRUD
   rpc getLocationList(Void) returns (stream LocationDto);
-  rpc createLocation(CreateLocationRq) returns (Void);
-  rpc deleteLocation(Id) returns (Void);
+  rpc createLocation(CreateLocationRq) returns (LocationDto);
+  rpc deleteLocation(LocationId) returns (Void);
   rpc updateLocation(LocationDto) returns (Void);
 
-  rpc getRouteList(Void) returns (stream RouteDto);
-  rpc createRoute(CreateRouteRq) returns (Void);
-  rpc deleteRoute(Id) returns (Void);
+  rpc getRoutesInLocation(LocationId) returns (stream RouteDto);
+  rpc createRoute(CreateRouteRq) returns (RouteDto);
+  rpc deleteRoute(RouteId) returns (Void);
   rpc updateRoute(RouteDto) returns (Void);
+ 
+}
 
 
+
+message LocationTree {
+  LocationDto location = 1;
+  repeated RouteDto routes = 2;
   
 }
 
 
 // Общее
-message Id {
+message LocationId {
+  string id = 1;
+}
+message RouteId {
   string id = 1;
 }
 message Void {
 }
 
 // Локации
-
-
 message CreateLocationRq {
   string name = 1;
   optional string description = 2;
@@ -62,6 +71,7 @@ message CreateRouteRq {
 
 message RouteDto {
   string id = 1;
+  string locationId = 8;
   string name = 2;
   string comment = 3;
   int64 distance = 4; // дистанция в метрах

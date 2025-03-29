@@ -1,5 +1,6 @@
 package dev.fizlrock.waterwalk.application.mapper;
 
+import dev.fizlrock.waterwalk.domain.entity.LocationId;
 import dev.fizlrock.waterwalk.domain.entity.Route;
 import dev.fizlrock.waterwalk.domain.entity.RouteId;
 import dev.fizlrock.waterwalk.domain.values.Difficulty;
@@ -18,6 +19,10 @@ public interface RouteMapper {
 
   default long toDto(Distance dist) {
     return dist.inMeters();
+  }
+
+  default String toDto(LocationId id) {
+    return id.uuid().toString();
   }
 
   default long toDto(Price price) {
