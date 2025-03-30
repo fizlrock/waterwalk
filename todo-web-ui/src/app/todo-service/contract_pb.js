@@ -11,11 +11,11 @@
 /* eslint-disable */
 // @ts-nocheck
 
-var jspb = require('google-protobuf');
+import jspb, { Message, BinaryReader, BinaryWriter } from 'google-protobuf';
 var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+import google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb.js';
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq', null, global);
 goog.exportSymbol('proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq', null, global);
@@ -37,9 +37,9 @@ goog.exportSymbol('proto.dev.fizlrock.waterwalk.grpc.Void', null, global);
  * @constructor
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.dev.fizlrock.waterwalk.grpc.LocationTree.repeatedFields_, null);
+  Message.initialize(this, opt_data, 0, -1, proto.dev.fizlrock.waterwalk.grpc.LocationTree.repeatedFields_, null);
 };
-goog.inherits(proto.dev.fizlrock.waterwalk.grpc.LocationTree, jspb.Message);
+goog.inherits(proto.dev.fizlrock.waterwalk.grpc.LocationTree, Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
@@ -58,9 +58,9 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationId = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dev.fizlrock.waterwalk.grpc.LocationId, jspb.Message);
+goog.inherits(proto.dev.fizlrock.waterwalk.grpc.LocationId, Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
@@ -79,9 +79,9 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteId = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dev.fizlrock.waterwalk.grpc.RouteId, jspb.Message);
+goog.inherits(proto.dev.fizlrock.waterwalk.grpc.RouteId, Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
@@ -100,9 +100,9 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.dev.fizlrock.waterwalk.grpc.Void = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dev.fizlrock.waterwalk.grpc.Void, jspb.Message);
+goog.inherits(proto.dev.fizlrock.waterwalk.grpc.Void, Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
@@ -121,9 +121,9 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq, jspb.Message);
+goog.inherits(proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq, Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
@@ -142,9 +142,9 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dev.fizlrock.waterwalk.grpc.LocationDto, jspb.Message);
+goog.inherits(proto.dev.fizlrock.waterwalk.grpc.LocationDto, Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
@@ -163,9 +163,9 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq, jspb.Message);
+goog.inherits(proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq, Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
@@ -184,9 +184,9 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dev.fizlrock.waterwalk.grpc.RouteDto, jspb.Message);
+goog.inherits(proto.dev.fizlrock.waterwalk.grpc.RouteDto, Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
@@ -204,45 +204,45 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.repeatedFields_ = [2];
 
 
 
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.toObject = function(opt_includeInstance) {
-  return proto.dev.fizlrock.waterwalk.grpc.LocationTree.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dev.fizlrock.waterwalk.grpc.LocationTree} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dev.fizlrock.waterwalk.grpc.LocationTree.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    location: (f = msg.getLocation()) && proto.dev.fizlrock.waterwalk.grpc.LocationDto.toObject(includeInstance, f),
-    routesList: jspb.Message.toObjectList(msg.getRoutesList(),
-    proto.dev.fizlrock.waterwalk.grpc.RouteDto.toObject, includeInstance)
+if (Message.GENERATE_TO_OBJECT) {
+  /**
+   * Creates an object representation of this proto.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * Optional fields that are not set will be set to undefined.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+   *     JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.toObject = function(opt_includeInstance) {
+    return proto.dev.fizlrock.waterwalk.grpc.LocationTree.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+   *     the JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.dev.fizlrock.waterwalk.grpc.LocationTree} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.dev.fizlrock.waterwalk.grpc.LocationTree.toObject = function(includeInstance, msg) {
+    var f, obj = {
+      location: (f = msg.getLocation()) && proto.dev.fizlrock.waterwalk.grpc.LocationDto.toObject(includeInstance, f),
+      routesList: Message.toObjectList(msg.getRoutesList(),
+        proto.dev.fizlrock.waterwalk.grpc.RouteDto.toObject, includeInstance)
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -252,7 +252,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.toObject = function(includeInstan
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationTree}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
+  var reader = new BinaryReader(bytes);
   var msg = new proto.dev.fizlrock.waterwalk.grpc.LocationTree;
   return proto.dev.fizlrock.waterwalk.grpc.LocationTree.deserializeBinaryFromReader(msg, reader);
 };
@@ -272,19 +272,19 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.deserializeBinaryFromReader = fun
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new proto.dev.fizlrock.waterwalk.grpc.LocationDto;
-      reader.readMessage(value,proto.dev.fizlrock.waterwalk.grpc.LocationDto.deserializeBinaryFromReader);
-      msg.setLocation(value);
-      break;
-    case 2:
-      var value = new proto.dev.fizlrock.waterwalk.grpc.RouteDto;
-      reader.readMessage(value,proto.dev.fizlrock.waterwalk.grpc.RouteDto.deserializeBinaryFromReader);
-      msg.addRoutes(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = new proto.dev.fizlrock.waterwalk.grpc.LocationDto;
+        reader.readMessage(value, proto.dev.fizlrock.waterwalk.grpc.LocationDto.deserializeBinaryFromReader);
+        msg.setLocation(value);
+        break;
+      case 2:
+        var value = new proto.dev.fizlrock.waterwalk.grpc.RouteDto;
+        reader.readMessage(value, proto.dev.fizlrock.waterwalk.grpc.RouteDto.deserializeBinaryFromReader);
+        msg.addRoutes(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -296,7 +296,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.deserializeBinaryFromReader = fun
  * @return {!Uint8Array}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
+  var writer = new BinaryWriter();
   proto.dev.fizlrock.waterwalk.grpc.LocationTree.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
@@ -336,7 +336,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.serializeBinaryToWriter = functio
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.getLocation = function() {
   return /** @type{?proto.dev.fizlrock.waterwalk.grpc.LocationDto} */ (
-    jspb.Message.getWrapperField(this, proto.dev.fizlrock.waterwalk.grpc.LocationDto, 1));
+    Message.getWrapperField(this, proto.dev.fizlrock.waterwalk.grpc.LocationDto, 1));
 };
 
 
@@ -345,7 +345,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.getLocation = function(
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationTree} returns this
 */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return Message.setWrapperField(this, 1, value);
 };
 
 
@@ -363,7 +363,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.clearLocation = functio
  * @return {boolean}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return Message.getField(this, 1) != null;
 };
 
 
@@ -373,7 +373,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.hasLocation = function(
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.getRoutesList = function() {
   return /** @type{!Array<!proto.dev.fizlrock.waterwalk.grpc.RouteDto>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dev.fizlrock.waterwalk.grpc.RouteDto, 2));
+    Message.getRepeatedWrapperField(this, proto.dev.fizlrock.waterwalk.grpc.RouteDto, 2));
 };
 
 
@@ -382,7 +382,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.getRoutesList = functio
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationTree} returns this
 */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.setRoutesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -392,7 +392,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.setRoutesList = functio
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.addRoutes = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dev.fizlrock.waterwalk.grpc.RouteDto, opt_index);
+  return Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dev.fizlrock.waterwalk.grpc.RouteDto, opt_index);
 };
 
 
@@ -408,43 +408,43 @@ proto.dev.fizlrock.waterwalk.grpc.LocationTree.prototype.clearRoutesList = funct
 
 
 
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dev.fizlrock.waterwalk.grpc.LocationId.prototype.toObject = function(opt_includeInstance) {
-  return proto.dev.fizlrock.waterwalk.grpc.LocationId.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dev.fizlrock.waterwalk.grpc.LocationId} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dev.fizlrock.waterwalk.grpc.LocationId.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
+if (Message.GENERATE_TO_OBJECT) {
+  /**
+   * Creates an object representation of this proto.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * Optional fields that are not set will be set to undefined.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+   *     JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.dev.fizlrock.waterwalk.grpc.LocationId.prototype.toObject = function(opt_includeInstance) {
+    return proto.dev.fizlrock.waterwalk.grpc.LocationId.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+   *     the JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.dev.fizlrock.waterwalk.grpc.LocationId} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.dev.fizlrock.waterwalk.grpc.LocationId.toObject = function(includeInstance, msg) {
+    var f, obj = {
+      id: Message.getFieldWithDefault(msg, 1, "")
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -454,7 +454,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationId.toObject = function(includeInstance
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationId}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationId.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
+  var reader = new BinaryReader(bytes);
   var msg = new proto.dev.fizlrock.waterwalk.grpc.LocationId;
   return proto.dev.fizlrock.waterwalk.grpc.LocationId.deserializeBinaryFromReader(msg, reader);
 };
@@ -474,13 +474,13 @@ proto.dev.fizlrock.waterwalk.grpc.LocationId.deserializeBinaryFromReader = funct
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setId(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -492,7 +492,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationId.deserializeBinaryFromReader = funct
  * @return {!Uint8Array}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationId.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
+  var writer = new BinaryWriter();
   proto.dev.fizlrock.waterwalk.grpc.LocationId.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
@@ -522,7 +522,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationId.serializeBinaryToWriter = function(
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationId.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -531,50 +531,50 @@ proto.dev.fizlrock.waterwalk.grpc.LocationId.prototype.getId = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationId} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationId.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return Message.setProto3StringField(this, 1, value);
 };
 
 
 
 
 
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dev.fizlrock.waterwalk.grpc.RouteId.prototype.toObject = function(opt_includeInstance) {
-  return proto.dev.fizlrock.waterwalk.grpc.RouteId.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dev.fizlrock.waterwalk.grpc.RouteId} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dev.fizlrock.waterwalk.grpc.RouteId.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
+if (Message.GENERATE_TO_OBJECT) {
+  /**
+   * Creates an object representation of this proto.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * Optional fields that are not set will be set to undefined.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+   *     JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.dev.fizlrock.waterwalk.grpc.RouteId.prototype.toObject = function(opt_includeInstance) {
+    return proto.dev.fizlrock.waterwalk.grpc.RouteId.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+   *     the JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.dev.fizlrock.waterwalk.grpc.RouteId} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.dev.fizlrock.waterwalk.grpc.RouteId.toObject = function(includeInstance, msg) {
+    var f, obj = {
+      id: Message.getFieldWithDefault(msg, 1, "")
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -584,7 +584,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteId.toObject = function(includeInstance, m
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteId}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteId.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
+  var reader = new BinaryReader(bytes);
   var msg = new proto.dev.fizlrock.waterwalk.grpc.RouteId;
   return proto.dev.fizlrock.waterwalk.grpc.RouteId.deserializeBinaryFromReader(msg, reader);
 };
@@ -604,13 +604,13 @@ proto.dev.fizlrock.waterwalk.grpc.RouteId.deserializeBinaryFromReader = function
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setId(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -622,7 +622,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteId.deserializeBinaryFromReader = function
  * @return {!Uint8Array}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteId.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
+  var writer = new BinaryWriter();
   proto.dev.fizlrock.waterwalk.grpc.RouteId.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
@@ -652,7 +652,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteId.serializeBinaryToWriter = function(mes
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteId.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -661,50 +661,50 @@ proto.dev.fizlrock.waterwalk.grpc.RouteId.prototype.getId = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteId} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteId.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return Message.setProto3StringField(this, 1, value);
 };
 
 
 
 
 
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dev.fizlrock.waterwalk.grpc.Void.prototype.toObject = function(opt_includeInstance) {
-  return proto.dev.fizlrock.waterwalk.grpc.Void.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dev.fizlrock.waterwalk.grpc.Void} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dev.fizlrock.waterwalk.grpc.Void.toObject = function(includeInstance, msg) {
-  var f, obj = {
-
+if (Message.GENERATE_TO_OBJECT) {
+  /**
+   * Creates an object representation of this proto.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * Optional fields that are not set will be set to undefined.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+   *     JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.dev.fizlrock.waterwalk.grpc.Void.prototype.toObject = function(opt_includeInstance) {
+    return proto.dev.fizlrock.waterwalk.grpc.Void.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+   *     the JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.dev.fizlrock.waterwalk.grpc.Void} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.dev.fizlrock.waterwalk.grpc.Void.toObject = function(includeInstance, msg) {
+    var f, obj = {
+
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -714,7 +714,7 @@ proto.dev.fizlrock.waterwalk.grpc.Void.toObject = function(includeInstance, msg)
  * @return {!proto.dev.fizlrock.waterwalk.grpc.Void}
  */
 proto.dev.fizlrock.waterwalk.grpc.Void.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
+  var reader = new BinaryReader(bytes);
   var msg = new proto.dev.fizlrock.waterwalk.grpc.Void;
   return proto.dev.fizlrock.waterwalk.grpc.Void.deserializeBinaryFromReader(msg, reader);
 };
@@ -734,9 +734,9 @@ proto.dev.fizlrock.waterwalk.grpc.Void.deserializeBinaryFromReader = function(ms
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    default:
-      reader.skipField();
-      break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -748,7 +748,7 @@ proto.dev.fizlrock.waterwalk.grpc.Void.deserializeBinaryFromReader = function(ms
  * @return {!Uint8Array}
  */
 proto.dev.fizlrock.waterwalk.grpc.Void.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
+  var writer = new BinaryWriter();
   proto.dev.fizlrock.waterwalk.grpc.Void.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
@@ -769,44 +769,44 @@ proto.dev.fizlrock.waterwalk.grpc.Void.serializeBinaryToWriter = function(messag
 
 
 
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.toObject = function(opt_includeInstance) {
-  return proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, "")
+if (Message.GENERATE_TO_OBJECT) {
+  /**
+   * Creates an object representation of this proto.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * Optional fields that are not set will be set to undefined.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+   *     JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.toObject = function(opt_includeInstance) {
+    return proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+   *     the JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.toObject = function(includeInstance, msg) {
+    var f, obj = {
+      name: Message.getFieldWithDefault(msg, 1, ""),
+      description: Message.getFieldWithDefault(msg, 2, "")
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -816,7 +816,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.toObject = function(includeIn
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
+  var reader = new BinaryReader(bytes);
   var msg = new proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq;
   return proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.deserializeBinaryFromReader(msg, reader);
 };
@@ -836,17 +836,17 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.deserializeBinaryFromReader =
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setName(value);
+        break;
+      case 2:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setDescription(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -858,7 +858,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.deserializeBinaryFromReader =
  * @return {!Uint8Array}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
+  var writer = new BinaryWriter();
   proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
@@ -880,7 +880,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.serializeBinaryToWriter = fun
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
       2,
@@ -895,7 +895,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.serializeBinaryToWriter = fun
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -904,7 +904,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.getName = function(
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -913,7 +913,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.setName = function(
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -922,7 +922,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.getDescription = fu
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return Message.setField(this, 2, value);
 };
 
 
@@ -931,7 +931,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.setDescription = fu
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return Message.setField(this, 2, undefined);
 };
 
 
@@ -940,52 +940,52 @@ proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.clearDescription = 
  * @return {boolean}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateLocationRq.prototype.hasDescription = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return Message.getField(this, 2) != null;
 };
 
 
 
 
 
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.toObject = function(opt_includeInstance) {
-  return proto.dev.fizlrock.waterwalk.grpc.LocationDto.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dev.fizlrock.waterwalk.grpc.LocationDto} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dev.fizlrock.waterwalk.grpc.LocationDto.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+if (Message.GENERATE_TO_OBJECT) {
+  /**
+   * Creates an object representation of this proto.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * Optional fields that are not set will be set to undefined.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+   *     JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.toObject = function(opt_includeInstance) {
+    return proto.dev.fizlrock.waterwalk.grpc.LocationDto.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+   *     the JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.dev.fizlrock.waterwalk.grpc.LocationDto} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.dev.fizlrock.waterwalk.grpc.LocationDto.toObject = function(includeInstance, msg) {
+    var f, obj = {
+      id: Message.getFieldWithDefault(msg, 1, ""),
+      name: Message.getFieldWithDefault(msg, 2, ""),
+      description: Message.getFieldWithDefault(msg, 3, "")
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -995,7 +995,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.toObject = function(includeInstanc
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationDto}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
+  var reader = new BinaryReader(bytes);
   var msg = new proto.dev.fizlrock.waterwalk.grpc.LocationDto;
   return proto.dev.fizlrock.waterwalk.grpc.LocationDto.deserializeBinaryFromReader(msg, reader);
 };
@@ -1015,21 +1015,21 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.deserializeBinaryFromReader = func
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setId(value);
+        break;
+      case 2:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setName(value);
+        break;
+      case 3:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setDescription(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -1041,7 +1041,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.deserializeBinaryFromReader = func
  * @return {!Uint8Array}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
+  var writer = new BinaryWriter();
   proto.dev.fizlrock.waterwalk.grpc.LocationDto.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
@@ -1085,7 +1085,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.serializeBinaryToWriter = function
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1094,7 +1094,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.getId = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1103,7 +1103,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.setId = function(value) 
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1112,7 +1112,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.getName = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1121,7 +1121,7 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.setName = function(value
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -1130,56 +1130,56 @@ proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.getDescription = functio
  * @return {!proto.dev.fizlrock.waterwalk.grpc.LocationDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.LocationDto.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return Message.setProto3StringField(this, 3, value);
 };
 
 
 
 
 
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.toObject = function(opt_includeInstance) {
-  return proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    locationid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    comment: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    distance: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    difficulty: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    duration: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 7, 0)
+if (Message.GENERATE_TO_OBJECT) {
+  /**
+   * Creates an object representation of this proto.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * Optional fields that are not set will be set to undefined.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+   *     JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.toObject = function(opt_includeInstance) {
+    return proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+   *     the JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.toObject = function(includeInstance, msg) {
+    var f, obj = {
+      locationid: Message.getFieldWithDefault(msg, 1, ""),
+      name: Message.getFieldWithDefault(msg, 2, ""),
+      comment: Message.getFieldWithDefault(msg, 3, ""),
+      distance: Message.getFieldWithDefault(msg, 4, 0),
+      difficulty: Message.getFieldWithDefault(msg, 5, 0),
+      duration: Message.getFieldWithDefault(msg, 6, 0),
+      price: Message.getFieldWithDefault(msg, 7, 0)
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -1189,7 +1189,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.toObject = function(includeInsta
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
+  var reader = new BinaryReader(bytes);
   var msg = new proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq;
   return proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.deserializeBinaryFromReader(msg, reader);
 };
@@ -1209,37 +1209,37 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLocationid(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setComment(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setDistance(value);
-      break;
-    case 5:
-      var value = /** @type {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty} */ (reader.readEnum());
-      msg.setDifficulty(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setDuration(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setPrice(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setLocationid(value);
+        break;
+      case 2:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setName(value);
+        break;
+      case 3:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setComment(value);
+        break;
+      case 4:
+        var value = /** @type {number} */ (reader.readInt64());
+        msg.setDistance(value);
+        break;
+      case 5:
+        var value = /** @type {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty} */ (reader.readEnum());
+        msg.setDifficulty(value);
+        break;
+      case 6:
+        var value = /** @type {number} */ (reader.readInt64());
+        msg.setDuration(value);
+        break;
+      case 7:
+        var value = /** @type {number} */ (reader.readInt64());
+        msg.setPrice(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -1251,7 +1251,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.deserializeBinaryFromReader = fu
  * @return {!Uint8Array}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
+  var writer = new BinaryWriter();
   proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
@@ -1323,7 +1323,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.serializeBinaryToWriter = functi
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getLocationid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1332,7 +1332,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getLocationid = functi
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setLocationid = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1341,7 +1341,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setLocationid = functi
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1350,7 +1350,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getName = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1359,7 +1359,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setName = function(val
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getComment = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -1368,7 +1368,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getComment = function(
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setComment = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1377,7 +1377,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setComment = function(
  * @return {number}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getDistance = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -1386,7 +1386,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getDistance = function
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setDistance = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -1395,7 +1395,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setDistance = function
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getDifficulty = function() {
-  return /** @type {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty} */ (Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -1404,7 +1404,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getDifficulty = functi
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setDifficulty = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  return Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -1413,7 +1413,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setDifficulty = functi
  * @return {number}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getDuration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -1422,7 +1422,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getDuration = function
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setDuration = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -1431,7 +1431,7 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setDuration = function
  * @return {number}
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {number} */ (Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -1440,57 +1440,57 @@ proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.getPrice = function() 
  * @return {!proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.CreateRouteRq.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+  return Message.setProto3IntField(this, 7, value);
 };
 
 
 
 
 
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.toObject = function(opt_includeInstance) {
-  return proto.dev.fizlrock.waterwalk.grpc.RouteDto.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dev.fizlrock.waterwalk.grpc.RouteDto.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    locationid: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    comment: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    distance: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    difficulty: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    duration: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 7, 0)
+if (Message.GENERATE_TO_OBJECT) {
+  /**
+   * Creates an object representation of this proto.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * Optional fields that are not set will be set to undefined.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+   *     JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.toObject = function(opt_includeInstance) {
+    return proto.dev.fizlrock.waterwalk.grpc.RouteDto.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+   *     the JSPB instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.dev.fizlrock.waterwalk.grpc.RouteDto.toObject = function(includeInstance, msg) {
+    var f, obj = {
+      id: Message.getFieldWithDefault(msg, 1, ""),
+      locationid: Message.getFieldWithDefault(msg, 8, ""),
+      name: Message.getFieldWithDefault(msg, 2, ""),
+      comment: Message.getFieldWithDefault(msg, 3, ""),
+      distance: Message.getFieldWithDefault(msg, 4, 0),
+      difficulty: Message.getFieldWithDefault(msg, 5, 0),
+      duration: Message.getFieldWithDefault(msg, 6, 0),
+      price: Message.getFieldWithDefault(msg, 7, 0)
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -1500,7 +1500,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.toObject = function(includeInstance, 
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
+  var reader = new BinaryReader(bytes);
   var msg = new proto.dev.fizlrock.waterwalk.grpc.RouteDto;
   return proto.dev.fizlrock.waterwalk.grpc.RouteDto.deserializeBinaryFromReader(msg, reader);
 };
@@ -1520,41 +1520,41 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.deserializeBinaryFromReader = functio
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLocationid(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setComment(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setDistance(value);
-      break;
-    case 5:
-      var value = /** @type {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty} */ (reader.readEnum());
-      msg.setDifficulty(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setDuration(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setPrice(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setId(value);
+        break;
+      case 8:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setLocationid(value);
+        break;
+      case 2:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setName(value);
+        break;
+      case 3:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setComment(value);
+        break;
+      case 4:
+        var value = /** @type {number} */ (reader.readInt64());
+        msg.setDistance(value);
+        break;
+      case 5:
+        var value = /** @type {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty} */ (reader.readEnum());
+        msg.setDifficulty(value);
+        break;
+      case 6:
+        var value = /** @type {number} */ (reader.readInt64());
+        msg.setDuration(value);
+        break;
+      case 7:
+        var value = /** @type {number} */ (reader.readInt64());
+        msg.setPrice(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -1566,7 +1566,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.deserializeBinaryFromReader = functio
  * @return {!Uint8Array}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
+  var writer = new BinaryWriter();
   proto.dev.fizlrock.waterwalk.grpc.RouteDto.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
@@ -1645,7 +1645,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.serializeBinaryToWriter = function(me
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1654,7 +1654,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getId = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1663,7 +1663,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setId = function(value) {
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getLocationid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -1672,7 +1672,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getLocationid = function() 
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setLocationid = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -1681,7 +1681,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setLocationid = function(va
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1690,7 +1690,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getName = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1699,7 +1699,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setName = function(value) {
  * @return {string}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getComment = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -1708,7 +1708,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getComment = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setComment = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1717,7 +1717,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setComment = function(value
  * @return {number}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getDistance = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -1726,7 +1726,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getDistance = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setDistance = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -1735,7 +1735,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setDistance = function(valu
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getDifficulty = function() {
-  return /** @type {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.dev.fizlrock.waterwalk.grpc.RouteDifficulty} */ (Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -1744,7 +1744,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getDifficulty = function() 
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setDifficulty = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  return Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -1753,7 +1753,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setDifficulty = function(va
  * @return {number}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getDuration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -1762,7 +1762,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getDuration = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setDuration = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -1771,7 +1771,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setDuration = function(valu
  * @return {number}
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {number} */ (Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -1780,7 +1780,7 @@ proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.getPrice = function() {
  * @return {!proto.dev.fizlrock.waterwalk.grpc.RouteDto} returns this
  */
 proto.dev.fizlrock.waterwalk.grpc.RouteDto.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+  return Message.setProto3IntField(this, 7, value);
 };
 
 
