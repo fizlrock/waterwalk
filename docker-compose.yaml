@@ -2,43 +2,60 @@
 
 
 services:
-  todo-service:
+  monolith:
     image: fizlrock/todo/backend
     environment:
-      SPRING_DATA_MONGODB_URI: mongodb://todo-database:27017/todolist
+      SPRING_DATA_MONGODB_URI: mongodb://database:27017/todolist
     ports:
       - 9090:9090
     depends_on:
-      - todo-database
+      - database
     networks:
-      - todo-network
+      - internal-network
 
       
-  todo-database:
+  database:
     image: mongodb/mongodb-community-server
     volumes:
     - mongodb_data:/data/db
     networks:
-      - todo-network
+      - internal-network
     # ports:
     #   - "27017:27017"
 
-  todo-envoy:
+  envoy:
     image: envoyproxy/envoy:v1.29.0
     container_name: envoy
     volumes:
-      - ./envoy-proxy/envoy.yaml:/etc/envoy/envoy.yaml
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
     ports:
       - "8080:8080"  # HTTP вход
       - "9901:9901"  # Панель управления Envoy
     networks:
-      - todo-network
-    depends_on:
-      - todo-service
+      - internal-network
 
+  
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    ports:
+      - 8081:8080
+    networks:
+      - keycloak-network
+    command:
+      - start-dev
+    volumes:
+      - ./keycloak.conf:/opt/keycloak/standalone/configuration
+      - keycloak-data:/opt/keycloak/data
       
 volumes:
   mongodb_data:
+  keycloak-data:
+      driver: local
+    
 
 networks:
-  todo-network:
+  internal-network:
+  keycloak-network:

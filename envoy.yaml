@@ -22,7 +22,17 @@ static_resources:
               routes:
               - match: { prefix: "/" }
                 route: { cluster: todo-service }
+              cors:
+                allow_origin_string_match:
+                - prefix: "*"  # Разрешает все источники, можно заменить на конкретный, например "http://localhost:3000"
+                allow_methods: "GET, POST, PUT, DELETE, OPTIONS"
+                allow_headers: "content-type, authorization, x-grpc-web, x-user-agent"
+                expose_headers: "content-type, grpc-status, grpc-message"
+                max_age: "1728000"  # 20 дней для preflight-кэша
           http_filters:
+          - name: envoy.filters.http.cors
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.cors.v3.Cors
           - name: envoy.grpc_web
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.filters.http.grpc_web.v3.GrpcWeb
@@ -46,5 +56,5 @@ static_resources:
           - endpoint:
               address:
                 socket_address:
-                  address: todo-service
+                  address: monolith
                   port_value: 9090

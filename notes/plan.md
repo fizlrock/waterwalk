@@ -9,12 +9,25 @@
 
 
 # Задачи
+
+
+## Backend
+
+- [x] Прокси для grpc-web
 - [ ] Security
-- [ ] Тестирование
-- [ ] Docker...
+- [ ] Тестирование...
+- [ ] Docker
   - [x] Java in docker
-  - [ ] Mongo in docker
+  - [x] Mongo in docker
   - [ ] Keycloak?
-  
-- [ ] Прокси для grpc-web
+
+## Frontend Web
+- [ ] домен
+- [ ] dashboard
+- [ ] Глобальная обработка ошибок
+- [ ] Сервис для работы с локациями и прогулками
+- [ ] Авторизация через Keycloak
+- [ ] Расписание
+
+## Frontend Android 
 
