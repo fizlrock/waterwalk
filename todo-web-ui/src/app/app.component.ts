@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { WaterwalkServiceClient } from './todo-service/ContractServiceClientPb';
-import { CreateLocationRq, Void } from './todo-service/contract_pb';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 
 @Component({
   selector: 'app-root',
@@ -9,37 +8,27 @@ import { CreateLocationRq, Void } from './todo-service/contract_pb';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  private readonly oidcSecurityService = inject(OidcSecurityService);
 
   constructor() {
 
-    var client = new WaterwalkServiceClient("http://localhost:8080")
-    var stream = client.getLocationList(new Void())
-
-
-    stream.on('data', (response) => {
-
-      let obj = {
-        id: response.getId(),
-        name: response.getName(),
-        description: response.getDescription()
-      }
-      console.log('Получена локация:', obj);
-
-    });
-
-
-    let rq = new CreateLocationRq();
-    rq.setName("Новая локация")
-    rq.setDescription("Только что открылась")
-
-    var resp = client.createLocation(rq);
-    resp.then(x => console.log(x))
-
-
-
-
   }
 
+
+  ngOnInit() {
+    this.oidcSecurityService.checkAuth().subscribe(res => {
+      console.log(res)
+    });
+  }
+
+  login() {
+    this.oidcSecurityService.authorize();
+  }
+
+  logout() {
+    this.oidcSecurityService.logoff().subscribe((result) => console.log(result));
+  }
   title = 'todo-web-ui';
 }
