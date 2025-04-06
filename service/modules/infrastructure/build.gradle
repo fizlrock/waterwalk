@@ -6,5 +6,9 @@ plugins {
 dependencies {
     implementation project(':waterwalk-application')
     implementation 'org.springframework:spring-context'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'  
+    implementation("net.devh:grpc-server-spring-boot-starter:${springBootGrpcVersion}")
 }
