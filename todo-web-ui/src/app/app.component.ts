@@ -1,16 +1,20 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
 
+import { MatButtonModule } from '@angular/material/button';
+import { ToolbarComponent } from './app/toolbar/toolbar.component';
+import { LocationComponent } from './app/location/location.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatButtonModule, ToolbarComponent, LocationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
 
   private readonly oidcSecurityService = inject(OidcSecurityService);
+
 
   constructor() {
 
@@ -19,16 +23,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.oidcSecurityService.checkAuth().subscribe(res => {
-      console.log(res)
+      if (!res.isAuthenticated)
+        this.oidcSecurityService.authorize();
     });
+
   }
 
-  login() {
-    this.oidcSecurityService.authorize();
-  }
 
-  logout() {
-    this.oidcSecurityService.logoff().subscribe((result) => console.log(result));
-  }
-  title = 'todo-web-ui';
 }

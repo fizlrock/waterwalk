@@ -1,0 +1,11 @@
+.main {
+
+
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 50px auto;
+  grid-template-columns: repeat(1, 1fr);
+
+
+}

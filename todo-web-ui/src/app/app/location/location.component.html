@@ -1,0 +1,35 @@
+<div class="location-component">
+
+  <button mat-fab extended (click)="createLocation()">
+    <mat-icon>add</mat-icon>
+    Создать локацию
+  </button>
+
+
+  <div class="location-cards">
+
+    @for(loc of waterwalkService.locations; track loc.getId()){
+
+    <mat-card class="location-card">
+      <mat-card-header>
+        <mat-card-title>
+          {{loc.getName()}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{loc.getDescription()}}
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-actions>
+        <button (click)="openRoutesInLocation(loc.getId())" mat-button>Маршруты</button>
+        <button (click)="editLocation(loc)" mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="deleteLocation(loc)" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    }
+  </div>
+</div>

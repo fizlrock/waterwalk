@@ -1,0 +1,16 @@
+.location-component {
+  margin: 10px;
+}
+
+.location-cards {
+  margin: 10px;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+}
+
+.location-card {
+  flex-grow: 1;
+  max-width: 300px;
+}
