@@ -4,20 +4,24 @@
 services:
 
 
-  web-ui:
-    build: ./todo-web-ui
-    ports:
-      - "4200:80"
+  # web-ui:
+  #   build: ./todo-web-ui
+  #   ports:
+  #     - "4200:80"
 
   
   monolith:
     image: fizlrock/todo/backend
     environment:
+      ISSUER_LOCATION: http://keycloak:8080/realms/fizlrock
       SPRING_DATA_MONGODB_URI: mongodb://database:27017/todolist
     ports:
       - 9090:9090
     depends_on:
-      - database
+      keycloak:
+        condition: service_healthy
+      database:
+        condition: service_started
     networks:
       - internal-network
 
@@ -27,8 +31,8 @@ services:
     - mongodb_data:/data/db
     networks:
       - internal-network
-    # ports:
-    #   - "27017:27017"
+    ports:
+      - "27017:27017"
 
   envoy:
     image: envoyproxy/envoy:v1.29.0
@@ -54,7 +58,9 @@ services:
       - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
-
+    networks:
+      - internal-network
+      
   keycloak:
     image: quay.io/keycloak/keycloak:latest
     container_name: keycloak
@@ -67,11 +73,21 @@ services:
       KC_DB_URL: jdbc:postgresql://postgres/keycloak
       KC_DB_USERNAME: keycloak
       KC_DB_PASSWORD: secret
-      KC_HOSTNAME: localhost
+      KC_METRICS_ENABLED: true
+      KC_HEALTH_ENABLED: true
+      KC_HOSTNAME: keycloak
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/9000&&echo \"GET /health/ready HTTP/1.1\r\nHost: localhost\r\n\r\n\">&3&&grep -q \"HTTP/1.1 200 OK\"<&3'"]
+      interval: 10s
+      timeout: 5s
+      retries: 10  
     ports:
       - "8081:8080"
+    networks:
+      - internal-network
     depends_on:
       - postgres
 
@@ -82,4 +98,3 @@ volumes:
 
 networks:
   internal-network:
-  keycloak-network:

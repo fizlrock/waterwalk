@@ -12,8 +12,9 @@
 
 
 ## Backend
+- [x] проблема с доменным именем и issuer-url
 - [x] Перенести конфиг keycloak в docker-compose
-- [ ] интеграция с keycloak
+- [x] интеграция с keycloak
 - [x] Прокси для grpc-web
 - [ ] Security
 - [ ] Тестирование...

@@ -5,6 +5,7 @@ import java.util.List;
 import net.devh.boot.grpc.server.security.authentication.BearerAuthenticationReader;
 import net.devh.boot.grpc.server.security.authentication.CompositeGrpcAuthenticationReader;
 import net.devh.boot.grpc.server.security.authentication.GrpcAuthenticationReader;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,8 +25,8 @@ public class WebConfig {
   }
 
   @Bean
-  public JwtDecoder jwtDecoder() {
-    return JwtDecoders.fromIssuerLocation("http://localhost:8081/realms/fizlrock");
+  public JwtDecoder jwtDecoder(@Value("${ISSUER_LOCATION}") String issuer) {
+    return JwtDecoders.fromIssuerLocation(issuer);
   }
 
   @Bean

@@ -10,11 +10,6 @@ spring:
     server:
       port: 9090
 
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8081
 
 logging:
   level:
